@@ -29,3 +29,10 @@ gem 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'formtastic', '2.0.0.rc1'
+gem "slim-rails"
+gem 'jquery-rails', '>= 1.0.3'
+
+gem "paperclip", "~> 2.3"
+
