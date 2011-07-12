@@ -1,0 +1,22 @@
+.contextual
+  = link_to 'Nuevo Content', new_content_path, :class => 'new_btn'
+
+h1 contents
+
+- if @contents
+  table
+    thead
+      tr
+        th Name
+        th Description
+        th
+    tbody
+      - @contents.each do |content|
+        tr
+          td= content.name
+          td= content.description
+          td.actions
+            = link_to 'Ver', content
+            = link_to 'Editar', edit_content_path(content)
+            = link_to 'Eliminar', content, :confirm => 'Está seguro ?', :method => :delete
+

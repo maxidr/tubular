@@ -1,0 +1,15 @@
+h2 Detalles del content
+
+.show
+  dl
+  
+    dt Name:
+    dd = @content.name
+  
+    dt Description:
+    dd = @content.description
+  
+
+= link_to 'Editar', edit_content_path(@content), :class => 'edit_button'
+= link_to 'Volver', contents_path, :class => 'back_button'
+
