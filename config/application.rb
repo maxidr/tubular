@@ -31,7 +31,7 @@ module Tubular
     # config.i18n.default_locale = :de
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w()
+    config.action_view.javascript_expansions[:defaults] = %w(jquery.min)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -40,3 +40,4 @@ module Tubular
     config.filter_parameters += [:password]
   end
 end
+
