@@ -33,6 +33,9 @@ gem 'sqlite3'
 gem 'formtastic', '2.0.0.rc1'
 gem "slim-rails"
 gem 'jquery-rails', '>= 1.0.3'
-
 gem "paperclip", "~> 2.3"
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.6"
+end
 
