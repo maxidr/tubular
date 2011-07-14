@@ -1,4 +1,4 @@
-# coding: utf-8
+# encoding: utf-8
 class ContentsController < ApplicationController
 
   respond_to :html, :xml, :js, :json
@@ -6,7 +6,7 @@ class ContentsController < ApplicationController
 #	before_filter :authenticate_usuario!
 #	load_and_authorize_resource
 
-	before_filter :find_content, :except => [:index, :new, :create, :mix]
+	before_filter :find_content, :except => [:index, :new, :create]
 
   # GET /contents
   # GET /contents.xml
@@ -34,17 +34,16 @@ class ContentsController < ApplicationController
   def edit
     respond_with @content
   end
-  
-  def mix
-    @content = Content.new
-    respond_with @content
-  end
 
   # POST /contents
   # POST /contents.xml
   def create
     @content = Content.new(params[:content])
     flash[:notice] = 'Se guardó el nuevo Content.' if @content.save
+    respond_with(@content, :location => new_content_track_path(@content))
+  end
+  
+  def upload
     respond_with(@content)
   end
 
