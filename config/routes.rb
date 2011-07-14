@@ -1,5 +1,9 @@
 Tubular::Application.routes.draw do
-  resources :contents
+  resources :contents do
+    collection do
+      get 'mix'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

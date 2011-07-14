@@ -1,0 +1,10 @@
+"es-AR":
+  activerecord:
+    models:
+      content: "Contenido"
+    attributes:
+      content:
+        name: "Nombre"
+        description: "Descripción"
+        asset_file_name: "Archivo"
+        asset: "Archivo del contenido"

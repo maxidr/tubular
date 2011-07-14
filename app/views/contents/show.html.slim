@@ -1,14 +1,13 @@
-h2 Detalles del content
+h2 Detalles del #{Content.human_name}
 
 .show
-  dl
-  
-    dt Name:
-    dd = @content.name
-  
-    dt Description:
+  dl  
+    dt = Content.human_attribute_name('name')
+    dd = @content.name  
+    dt = Content.human_attribute_name('description')
     dd = @content.description
-  
+    dt = Content.human_attribute_name('asset_file_name')
+    dd = @content.asset_file_name
 
 = link_to 'Editar', edit_content_path(@content), :class => 'edit_button'
 = link_to 'Volver', contents_path, :class => 'back_button'

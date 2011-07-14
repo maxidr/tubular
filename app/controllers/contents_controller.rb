@@ -6,13 +6,14 @@ class ContentsController < ApplicationController
 #	before_filter :authenticate_usuario!
 #	load_and_authorize_resource
 
-	before_filter :find_content, :except => [:index, :new, :create]
+	before_filter :find_content, :except => [:index, :new, :create, :mix]
 
   # GET /contents
   # GET /contents.xml
   def index
 #		@search = Content.search(params[:search])
 #		@contents = @search.paginate(:page => params[:page], :per_page => 15)
+    @contents = Content.all
     respond_with(@contents)
   end
 
@@ -31,6 +32,11 @@ class ContentsController < ApplicationController
 
   # GET /contents/1/edit
   def edit
+    respond_with @content
+  end
+  
+  def mix
+    @content = Content.new
     respond_with @content
   end
 

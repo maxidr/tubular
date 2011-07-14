@@ -1,6 +1,8 @@
 # encoding: utf-8
 class Content < ActiveRecord::Base
   has_attached_file :asset
+  
+  validates_presence_of :name
 end
 
 
