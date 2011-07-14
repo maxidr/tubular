@@ -35,6 +35,10 @@ gem "slim-rails"
 gem 'jquery-rails', '>= 1.0.3'
 gem "paperclip", "~> 2.3"
 
+group :development do
+  gem "annotate"
+end
+
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
 end
