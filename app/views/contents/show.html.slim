@@ -1,4 +1,4 @@
-h2 Detalles del #{Content.human_name}
+h2 Detalles del #{Content.model_name.human}
 
 .show
   dl  
@@ -6,8 +6,14 @@ h2 Detalles del #{Content.human_name}
     dd = @content.name  
     dt = Content.human_attribute_name('description')
     dd = @content.description
-    dt = Content.human_attribute_name('asset_file_name')
-    dd = @content.asset_file_name
+    - if @content.asset_file_name
+      dt = Content.human_attribute_name('asset_file_name')
+      dd = @content.asset_file_name
+    dt Videos adjuntos
+    dd    
+      == render 'detailed_attachments'
+    dt Preview
+    dd 
 
 = link_to 'Editar', edit_content_path(@content), :class => 'edit_button'
 = link_to 'Volver', contents_path, :class => 'back_button'

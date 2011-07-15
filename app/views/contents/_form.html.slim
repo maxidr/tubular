@@ -8,7 +8,13 @@
     /    p = @content.asset_file_name
     / = form.input :asset, :as => :file
   = form.buttons do
-    = form.commit_button 'Añadir contenidos'
+    - if controller.action_name == 'edit'
+      = form.commit_button 'Guardar cambios'
+      = link_to 'Añadir contenidos', new_content_track_path(@content)
+    - if controller.action_name == 'new'
+      = form.commit_button 'Crear y añadir contenidos'
+    
+  p Action: #{controller.action_name}
     
   
 

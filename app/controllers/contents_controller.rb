@@ -43,10 +43,6 @@ class ContentsController < ApplicationController
     respond_with(@content, :location => new_content_track_path(@content))
   end
   
-  def upload
-    respond_with(@content)
-  end
-
   # PUT /contents/1
   # PUT /contents/1.xml
   def update
@@ -58,7 +54,11 @@ class ContentsController < ApplicationController
   # DELETE /contents/1.xml
   def destroy
     flash[:notice] = 'Se eliminó el Content.' if @content.destroy
-    respond_with(@content)
+    if params[:back]
+      redirect_to content_path(params[:back])
+    else
+      respond_with(@content)
+    end
   end
 
   protected

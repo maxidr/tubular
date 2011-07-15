@@ -1,10 +1,16 @@
 = semantic_form_for [@content, @track], :html => { :multipart => true } do |form|
-  = form.inputs do    
-    = form.input :order
+  = form.inputs do
+    = form.semantic_fields_for :content do |new_content|
+        = new_content.input :name
+        = new_content.input :description
+        = new_content.input :asset
+    = form.input :position
     = form.input :start_time
     = form.input :end_time
-    = form.semantic_fields_for :track do |track|
-      =       
+  = form.buttons do
+    = form.commit_button 'Adjuntar video'
+    li.button
+      = link_to 'Finalizar carga', @content
 
     
 

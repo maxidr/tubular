@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20110714141100) do
   create_table "tracks", :force => true do |t|
     t.integer  "resulting_content_id"
     t.integer  "content_id"
-    t.integer  "order"
+    t.integer  "position"
     t.integer  "start_time"
     t.integer  "end_time"
     t.datetime "created_at"

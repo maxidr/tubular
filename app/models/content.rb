@@ -7,6 +7,8 @@ class Content < ActiveRecord::Base
   
   has_many :tracks, :foreign_key => :resulting_content_id
   
+  has_many :in_tracks, :foreign_key => :content_id, :class_name => 'Track', :dependent => :destroy
+  
 end
 
 

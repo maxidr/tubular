@@ -3,7 +3,7 @@ class CreateTracks < ActiveRecord::Migration
     create_table :tracks do |t|
       t.integer :resulting_content_id
       t.integer :content_id
-      t.integer :order
+      t.integer :position
       t.integer :start_time
       t.integer :end_time
 
