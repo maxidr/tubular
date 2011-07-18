@@ -39,6 +39,10 @@ group :development do
   gem "annotate"
 end
 
+group :production do
+  gem 'mysql2', '0.2.7'
+end
+
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
 end

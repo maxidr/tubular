@@ -15,8 +15,18 @@ test:
   pool: 5
   timeout: 5000
 
+#production:
+#  adapter: sqlite3
+#  database: db/production.sqlite3
+#  pool: 5
+#  timeout: 5000
+
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql2
+  database: tubular
+  username: tubular
+  password: tub1234
+  host: localhost
+  encoding: utf8
+  socket: /var/run/mysqld/mysqld.sock
+
