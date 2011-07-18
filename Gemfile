@@ -37,6 +37,7 @@ gem "paperclip", "~> 2.3"
 
 group :development do
   gem "annotate"
+  gem "nifty-generators"
 end
 
 group :production do
