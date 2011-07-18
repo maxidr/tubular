@@ -2,14 +2,14 @@
   = link_to 'Crear contenido', new_content_path, :class => 'new_btn'
 
 
-h1 contents
+h1 = Content.model_name.human.pluralize
 
 - if @contents
-  table
+  table(border=1)
     thead
       tr
-        th Name
-        th Description
+        th = Content.human_attribute_name('name')
+        th = Content.human_attribute_name('description')
         th
     tbody
       - @contents.each do |content|

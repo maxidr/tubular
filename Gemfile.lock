@@ -46,6 +46,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mysql2 (0.2.7)
     paperclip (2.3.8)
       activerecord
       activesupport
@@ -102,6 +103,7 @@ DEPENDENCIES
   annotate
   formtastic (= 2.0.0.rc1)
   jquery-rails (>= 1.0.3)
+  mysql2 (= 0.2.7)
   paperclip (~> 2.3)
   rails (= 3.0.6)
   rspec-rails (~> 2.6)

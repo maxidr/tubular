@@ -8,3 +8,8 @@
         description: "Descripción"
         asset_file_name: "Archivo"
         asset: "Archivo del contenido"
+      track:
+        position: "Posición"
+        start_time: "Tiempo de inicio"
+        end_time: "Tiempo de finalización"
+

@@ -1,7 +1,7 @@
 Tubular::Application.routes.draw do
   resources :contents do
     resources :tracks, :only => [:new, :create]
-    
+
     # TODO: Eliminar el ruteo de upload
     member do
       get 'upload'
@@ -58,7 +58,7 @@ Tubular::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "contents#index"
 
   # See how all your routes lay out with "rake routes"
 
@@ -66,3 +66,4 @@ Tubular::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 end
+
