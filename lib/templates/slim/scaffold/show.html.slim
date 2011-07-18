@@ -1,9 +1,9 @@
-h2 Detalles del <%= singular_table_name %>
+h2 Detalles del #{<%= class_name %>.human_name}
 
 .show
   dl
   <% for attribute in attributes %>
-    dt <%= attribute.human_name %>:
+    dt = <%= class_name %>.human_attribute_name('<%= attribute.name %>')
     dd = @<%= singular_table_name %>.<%= attribute.name %>
   <% end %>
 

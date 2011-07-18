@@ -2,5 +2,12 @@ h1 Editar content
 
 == render 'form'
 
+- if @content.tracks
+  h2 Contenidos adjuntos
+  == render 'detailed_attachments'
+  
+  = link_to 'Agregar más contenidos', new_content_track_path(@content)
+  br
+
 = link_to 'Cancelar y volver', contents_path, :class => 'back_button'
 

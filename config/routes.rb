@@ -1,5 +1,13 @@
 Tubular::Application.routes.draw do
-  resources :contents
+  resources :contents do
+    resources :tracks, :only => [:new, :create]
+    
+    # TODO: Eliminar el ruteo de upload
+    member do
+      get 'upload'
+    end
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

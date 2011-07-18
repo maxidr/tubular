@@ -1,4 +1,4 @@
-# coding: utf-8
+# encoding: utf-8
 class ContentsController < ApplicationController
 
   respond_to :html, :xml, :js, :json
@@ -13,6 +13,7 @@ class ContentsController < ApplicationController
   def index
 #		@search = Content.search(params[:search])
 #		@contents = @search.paginate(:page => params[:page], :per_page => 15)
+    @contents = Content.all
     respond_with(@contents)
   end
 
@@ -39,9 +40,9 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(params[:content])
     flash[:notice] = 'Se guardó el nuevo Content.' if @content.save
-    respond_with(@content)
+    respond_with(@content, :location => new_content_track_path(@content))
   end
-
+  
   # PUT /contents/1
   # PUT /contents/1.xml
   def update
@@ -53,7 +54,11 @@ class ContentsController < ApplicationController
   # DELETE /contents/1.xml
   def destroy
     flash[:notice] = 'Se eliminó el Content.' if @content.destroy
-    respond_with(@content)
+    if params[:back]
+      redirect_to content_path(params[:back])
+    else
+      respond_with(@content)
+    end
   end
 
   protected

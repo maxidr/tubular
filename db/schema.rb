@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110712184138) do
+ActiveRecord::Schema.define(:version => 20110714141100) do
 
   create_table "contents", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(:version => 20110712184138) do
     t.string   "asset_content_type"
     t.integer  "asset_file_size"
     t.datetime "asset_updated_at"
+  end
+
+  create_table "tracks", :force => true do |t|
+    t.integer  "resulting_content_id"
+    t.integer  "content_id"
+    t.integer  "position"
+    t.integer  "start_time"
+    t.integer  "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "upload_contents", :force => true do |t|

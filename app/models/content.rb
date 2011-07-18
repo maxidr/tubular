@@ -1,6 +1,14 @@
 # encoding: utf-8
 class Content < ActiveRecord::Base
+   
+  validates_presence_of :name
+    
   has_attached_file :asset
+  
+  has_many :tracks, :foreign_key => :resulting_content_id
+  
+  has_many :in_tracks, :foreign_key => :content_id, :class_name => 'Track', :dependent => :destroy
+  
 end
 
 
