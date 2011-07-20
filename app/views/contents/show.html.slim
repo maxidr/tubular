@@ -14,7 +14,19 @@ h2 Detalles del #{Content.model_name.human}
       == render 'detailed_attachments'
     dt Preview
     dd 
-
+      #player(style="display:block;width:425px;height:300px;")
+    
+    
 = link_to 'Editar', edit_content_path(@content), :class => 'edit_button'
 = link_to 'Volver', contents_path, :class => 'back_button'
 
+= content_for :js do
+  = javascript_include_tag "flowplayer-3.2.6.min"    
+  javascript:
+    flowplayer("player", "/flowplayer-3.2.7.swf", {
+      clip:  {
+        autoPlay: true,
+        autoBuffering: true,
+      },
+        playlist: [ #{playlist} ],
+    });

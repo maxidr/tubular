@@ -1,15 +1,23 @@
 # encoding: utf-8
 class Track < ActiveRecord::Base 
+  # RELATIONS --------------------------------------------------------------------------------
   # Element as part of the final content
   belongs_to :content, :class_name => 'Content'
   # Generated content
   belongs_to :resulting_content, :class_name => 'Content'
-  
+    
   accepts_nested_attributes_for :content
   
+  # VALIDATIONS ------------------------------------------------------------------------------
   validates_presence_of :content, :position
   
+  
+  # SCOPES -----------------------------------------------------------------------------------
   default_scope order(:position)
+  
+  # OTHER ------------------------------------------------------------------------------------
+  delegate :asset, :to => :content
+  
 end
 
 
