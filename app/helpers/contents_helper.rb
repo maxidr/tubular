@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module ContentsHelper
   def playlist
     out = ""
@@ -10,5 +11,10 @@ module ContentsHelper
     end
     out
   end
-    
+
+  def track_info(track)
+    "##{track.position}: #{track.content.name}, archivo: #{track.content.asset_file_name}, duración: #{track.content.duration}"
+  end
+
 end
+

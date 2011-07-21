@@ -2,6 +2,10 @@
   = form.inputs do
     = form.input :name
     = form.input :description
+    - if @content.asset.exists?
+      li.input
+        label.label Cargado
+        p = @content.asset_file_name
     / - if @content.asset_file_name
     /   li.input
     /    label.label Cargado
@@ -10,7 +14,7 @@
   = form.buttons do
     - if controller.action_name == 'edit'
       = form.commit_button 'Guardar cambios'
-      = link_to 'Añadir contenidos', new_content_track_path(@content)
+      = link_to 'Añadir contenidos', new_content_track_path(@content) if @content.original?
     - if controller.action_name == 'new'
       = form.commit_button 'Crear y añadir contenidos'
 

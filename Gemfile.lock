@@ -84,6 +84,7 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.6.0)
+    rvideo (0.9.3)
     slim (0.9.4)
       temple (~> 0.3.0)
       tilt (~> 1.2)
@@ -109,5 +110,6 @@ DEPENDENCIES
   paperclip (~> 2.3)
   rails (= 3.0.6)
   rspec-rails (~> 2.6)
+  rvideo
   slim-rails
   sqlite3
