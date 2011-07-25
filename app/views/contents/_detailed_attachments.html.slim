@@ -1,7 +1,9 @@
 ul#sortable
   - @content.tracks.each do |track|
-    li #{track_info(track)}
-        #{link_to 'Editar', edit_content_path(track.content)}
+    li id="#{track.id}" 
+      span.ui-icon.ui-icon-arrowthick-2-n-s
+      | #{{track_info(track)}}
+        #{link_to 'Editar', edit_content_path(track.content)} 
         #{link_to 'Eliminar', content_path(track.content, :back => @content.id), :confirm => 'Está seguro ?', :method => :delete }
 
 javascript:
@@ -9,7 +11,12 @@ javascript:
 		$( "#sortable" ).sortable({
 		  stop: function(event, ui) {
 		    console.log("Move item to: " + ui.item.index());
-		  }
+		  },
+		  axis: 'y',
+		  dropOnEmpty: false,
+		  		  
+		  
+		  
 		});
 		$( "#sortable" ).disableSelection();
 

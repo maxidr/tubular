@@ -7,7 +7,7 @@ class ContentsController < ApplicationController
 #	load_and_authorize_resource
 
 	before_filter :find_content, :except => [:index, :new, :create]
-
+	
   # GET /contents
   # GET /contents.xml
   def index
@@ -46,6 +46,13 @@ class ContentsController < ApplicationController
   # PUT /contents/1
   # PUT /contents/1.xml
   def update
+    if params[:order]
+      order = params[:order].split(",").map{ |v| v.to_i } if params[:order]
+      @content.tracks.each do |track|
+        track.position = order.find_index(track.id)
+        track.save
+      end
+    end
     flash[:notice] = 'Se actualizó el Content.' if @content.update_attributes(params[:content])
     respond_with(@content)
   end

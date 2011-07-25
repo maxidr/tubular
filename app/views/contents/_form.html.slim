@@ -6,11 +6,19 @@
       li.input
         label.label Cargado
         p = @content.asset_file_name
+    
     / - if @content.asset_file_name
     /   li.input
     /    label.label Cargado
     /    p = @content.asset_file_name
     / = form.input :asset, :as => :file
+    
+    - if @content.original? and controller.action_name == 'edit'
+      li.input
+        label.label Contenidos adjuntos
+        == render 'detailed_attachments' 
+        = hidden_field_tag 'order'
+    
   = form.buttons do
     - if controller.action_name == 'edit'
       = form.commit_button 'Guardar cambios'
@@ -18,3 +26,17 @@
     - if controller.action_name == 'new'
       = form.commit_button 'Crear y añadir contenidos'
 
+= content_for :css do
+  style
+    | #sortable{ width: 75%; display: block; float: right; }
+    | #sortable li { margin: 0 3px 3px 3px;
+    | padding: 0.4em;
+    | height: 18px; 
+    | border: 1px solid #CCC;
+    | outline: none;
+    |}
+    | #sortable span{ float: left; padding-right: 3px;}
+    | #sortable li a { padding-left: 5px; }
+
+= content_for :js do
+  = javascript_include_tag 'contents_form'

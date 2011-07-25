@@ -13,7 +13,7 @@ module ContentsHelper
   end
 
   def track_info(track)
-    "##{track.position}: #{track.content.name}, archivo: #{track.content.asset_file_name}, duración: #{track.content.duration}"
+    "<b>#{track.content.name}</b>, archivo: #{track.content.asset_file_name}, duración: #{track.content.duration}"
   end
 
 end
