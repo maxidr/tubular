@@ -10,6 +10,7 @@ class Content < ActiveRecord::Base
   has_many :in_tracks, :foreign_key => :content_id, :class_name => 'Track', :dependent => :destroy
 
 
+  # TODO: Guardar la información de tiempo en la base de datos, para evitar el recalculo.
   def duration
     get_video_file_duration
   end
@@ -19,7 +20,7 @@ class Content < ActiveRecord::Base
   end
 
   private
-
+  
   def get_video_file_duration
     return '' unless asset.exists?
 	  command = "ffmpeg -i #{asset.path} 2>&1 | grep 'Duration' | cut -d ' ' -f 4 | sed s/,//"

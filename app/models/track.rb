@@ -9,7 +9,7 @@ class Track < ActiveRecord::Base
   accepts_nested_attributes_for :content
   
   # VALIDATIONS ------------------------------------------------------------------------------
-  validates_presence_of :content, :position
+  validates_presence_of :content
   
   
   # SCOPES -----------------------------------------------------------------------------------

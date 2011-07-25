@@ -14,6 +14,8 @@ class TracksController < ApplicationController
     @content = Content.find(params[:content_id])
     @track = Track.new(params[:track])
     @track.resulting_content = @content
+    # Parche para evitar que el último agregado aparezca primero en la lista
+    @track.position = 99    
     flash[:notice] = 'Se adjuntó el video al contenido.' if @track.save
     respond_with(@track, :location => new_content_track_path(@content))
   end
