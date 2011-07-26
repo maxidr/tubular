@@ -20,10 +20,10 @@ class Content < ActiveRecord::Base
   end
 
   private
-  
+
   def get_video_file_duration
     return '' unless asset.exists?
-	  command = "ffmpeg -i #{asset.path} 2>&1 | grep 'Duration' | cut -d ' ' -f 4 | sed s/,//"
+	  command = "ffmpeg -i '#{asset.path}' 2>&1 | grep 'Duration' | cut -d ' ' -f 4 | sed s/,//"
     output = `#{command}`.chomp.to_s
 
 #    if output =~ /([\d][\d]):([\d][\d]):([\d][\d]).([\d]+)/
