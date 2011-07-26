@@ -9,13 +9,8 @@ h2 Detalles del #{Content.model_name.human}
     - if @content.asset_file_name
       dt = Content.human_attribute_name('asset_file_name')
       dd = @content.asset_file_name
-    - if @content.asset.exists?
-      li.input
-        label.label Cargado
-        p = @content.asset_file_name
-      li.input
-        label.label Duración
-        p = @content.duration
+      dt Duración
+      dd = @content.duration
     - else
       dt Videos adjuntos
       dd
