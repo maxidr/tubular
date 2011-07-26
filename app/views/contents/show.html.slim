@@ -1,27 +1,35 @@
 h2 Detalles del #{Content.model_name.human}
 
 .show
-  dl  
+  dl
     dt = Content.human_attribute_name('name')
-    dd = @content.name  
+    dd = @content.name
     dt = Content.human_attribute_name('description')
     dd = @content.description
     - if @content.asset_file_name
       dt = Content.human_attribute_name('asset_file_name')
       dd = @content.asset_file_name
-    dt Videos adjuntos
-    dd    
-      == render 'attachments'
+    - if @content.asset.exists?
+      li.input
+        label.label Cargado
+        p = @content.asset_file_name
+      li.input
+        label.label Duración
+        p = @content.duration
+    - else
+      dt Videos adjuntos
+      dd
+        == render 'attachments'
     dt Preview
-    dd 
+    dd
       #player(style="display:block;width:425px;height:300px;")
-    
-    
+
+
 = link_to 'Editar', edit_content_path(@content), :class => 'edit_button'
 = link_to 'Volver', contents_path, :class => 'back_button'
 
 = content_for :js do
-  = javascript_include_tag "flowplayer-3.2.6.min"    
+  = javascript_include_tag "flowplayer-3.2.6.min"
   javascript:
     flowplayer("player", "/flowplayer-3.2.7.swf", {
       clip:  {
@@ -30,3 +38,4 @@ h2 Detalles del #{Content.model_name.human}
       },
         playlist: [ #{playlist} ],
     });
+
