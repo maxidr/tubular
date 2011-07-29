@@ -34,7 +34,6 @@ gem 'formtastic', '2.0.0.rc1'
 gem "slim-rails"
 gem 'jquery-rails', '>= 1.0.3'
 gem "paperclip", "~> 2.3"
-gem "rvideo"
 
 group :development do
   gem "annotate"
