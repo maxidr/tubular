@@ -1,7 +1,7 @@
 * TODO: Agregar uk en track por contenido (o sea, no pueden haber 2 tracks para un contenido con número de posición 3)
 
 
-* Creación de playlist
+* Creación de playlist DONE
 * Pantalla de subida de multitples videos (con drag and drop)
 * Edición de cada video para título y duración (principio y fin)
 * Ordenar el playlist
