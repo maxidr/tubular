@@ -12,10 +12,9 @@ table
   tbody
     - @playlists.each do |playlist|
       tr
-              td= playlist.name
-              td= playlist.description
-              td.actions
-          = link_to 'Ver', playlist
-          = link_to 'Editar', edit_playlist_path(playlist)
+        td= playlist.name
+        td= playlist.description
+        td.actions
+          = link_to 'Editar', new_playlist_track_path(playlist)
           = link_to 'Eliminar', playlist, :confirm => 'Está seguro ?', :method => :delete
 
