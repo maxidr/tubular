@@ -1,0 +1,15 @@
+h2 Detalles del #{Playlist.human_name}
+
+.show
+  dl
+  
+    dt = Playlist.human_attribute_name('name')
+    dd = @playlist.name
+  
+    dt = Playlist.human_attribute_name('description')
+    dd = @playlist.description
+  
+
+= link_to 'Editar', edit_playlist_path(@playlist), :class => 'edit_button'
+= link_to 'Volver', playlists_path, :class => 'back_button'
+

@@ -1,4 +1,6 @@
 Tubular::Application.routes.draw do
+  resources :playlists
+
   resources :contents do
     resources :tracks, :only => [:new, :create]
 

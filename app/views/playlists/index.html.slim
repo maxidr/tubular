@@ -1,0 +1,21 @@
+.contextual
+  = link_to 'Nuevo Playlist', new_playlist_path, :class => 'new_btn'
+
+h1 playlists
+
+table
+  thead
+    tr
+      th Name
+      th Description
+      th
+  tbody
+    - @playlists.each do |playlist|
+      tr
+              td= playlist.name
+              td= playlist.description
+              td.actions
+          = link_to 'Ver', playlist
+          = link_to 'Editar', edit_playlist_path(playlist)
+          = link_to 'Eliminar', playlist, :confirm => 'Está seguro ?', :method => :delete
+
