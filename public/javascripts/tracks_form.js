@@ -25,6 +25,10 @@ $(function () {
             .appendTo('body');
     });
     
+    
+//    $('#fileupload').bind('fileuploaddone', function (e, data) {
+//      
+//    });
         
     // Return a helper with preserved width of cells
     var fixHelper = function(e, ui) {

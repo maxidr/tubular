@@ -30,6 +30,11 @@ class Content < ActiveRecord::Base
 #    return duration.to_s
 #    return "#{$2}:#{$3}"
   end
+  
+  # TODO: Incorporar este procesamiento a paperclip para que ejecute al subir una imagen
+  def take_video_a_snapshot
+    command = "ffmpeg -i '#{asset.path} -t 00:00:10 -ss 00:00:10 -vframes 1 snapshot.jpg 2>&1"
+  end
 
 end
 
