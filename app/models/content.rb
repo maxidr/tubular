@@ -1,14 +1,7 @@
 # encoding: utf-8
 class Content < ActiveRecord::Base
 
-  validates_presence_of :name
-
   has_attached_file :asset
-
-  has_many :tracks, :foreign_key => :resulting_content_id
-
-  has_many :in_tracks, :foreign_key => :content_id, :class_name => 'Track', :dependent => :destroy
-
 
   # TODO: Guardar la información de tiempo en la base de datos, para evitar el recalculo.
   def duration
@@ -17,6 +10,10 @@ class Content < ActiveRecord::Base
 
   def original?
     !tracks.empty?
+  end
+  
+  def name
+    read_attribute(:name).blank? ? asset_file_name : read_attribute(:name)
   end
 
   private

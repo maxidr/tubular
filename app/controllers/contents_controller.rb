@@ -46,8 +46,9 @@ class ContentsController < ApplicationController
   # PUT /contents/1
   # PUT /contents/1.xml
   def update
-    if params[:order]
-      order = params[:order].split(",").map{ |v| v.to_i } if params[:order]
+    logger.debug("Order: #{params[:order]}")
+    if params[:order]      
+      order = params[:order].map{ |v| v.to_i }
       @content.tracks.each do |track|
         track.position = order.find_index(track.id)
         track.save

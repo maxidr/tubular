@@ -1,15 +1,23 @@
-= semantic_form_for [@content, @track], :html => { :multipart => true } do |form|
-  = form.inputs do
-    = form.semantic_fields_for :content do |new_content|
-        = new_content.input :name
-        = new_content.input :description
-        = new_content.input :asset
-    = form.input :start_time
-    = form.input :end_time
-  = form.buttons do
-    = form.commit_button 'Adjuntar video'
-    li.button
-      = link_to 'Finalizar carga', @content
-
+#fileupload
+  = semantic_form_for [@playlist, @track], :html => { :multipart => true } do |form|        
+    .fileupload-buttonbar
+      label.fileinput-button
+        span Add files...
+        = form.file_field :asset
+      button.start type="submit" Start upload
+      button.cancel type="reset" Cancel upload
+      button.delete type="button" Delete files      
+  .fileupload-content
+    table.files
+      tbody#sortable
+    .fileupload-progressbar
     
+= render 'template-upload' 
+= render 'template-download'
 
+= content_for :js do    
+  = javascript_include_tag "jquery.tmpl.min", 'jquery.iframe-transport', 'jquery.fileupload',
+  = javascript_include_tag 'jquery.fileupload-ui', 'tracks_form'
+
+= content_for :css do
+  = stylesheet_link_tag "jquery.fileupload-ui"

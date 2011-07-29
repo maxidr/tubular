@@ -1,5 +1,7 @@
 # encoding: utf-8
 class Track < ActiveRecord::Base 
+  include Rails.application.routes.url_helpers
+  
   # RELATIONS --------------------------------------------------------------------------------
   belongs_to :content, :class_name => 'Content'
   belongs_to :playlist
@@ -16,6 +18,18 @@ class Track < ActiveRecord::Base
   # OTHER ------------------------------------------------------------------------------------
   delegate :asset, :to => :content
   
+  def to_jq_upload
+    {
+      "id" => id,
+      "name" => content.try(:name),
+      "size" => asset.try(:size),
+      "url" => asset.try(:url),
+      "duration" => content.try(:duration),
+      #"thumbnail_url" => avatar.thumb.url,
+      "delete_url" => track_path(id),
+      "delete_type" => "DELETE" 
+     }
+  end
   
 end
 

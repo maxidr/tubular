@@ -1,6 +1,8 @@
 # encoding: utf-8
 class Playlist < ActiveRecord::Base
-  has_many :tracks  
+  has_many :tracks
+  
+  validates_presence_of :name
 end
 
 

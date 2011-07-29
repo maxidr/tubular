@@ -1,0 +1,36 @@
+#fileupload
+  = semantic_form_for (@playlist) do |form|
+    .fileupload-buttonbar
+      = form.inputs do  
+        = form.input :name  
+        = form.input :description
+        
+    .fileupload-buttonbar
+      label.fileinput-button
+        span Add files...
+        input type="file" name="files[]" multiple
+
+      button.start type="submit" Start upload
+      button.cancel type="reset" Cancel upload
+      button.delete type="button" Delete files
+      
+    = form.buttons
+  .fileupload-content
+    table.files
+    .fileupload-progressbar
+    
+= render 'template-upload' 
+= render 'template-download'
+    
+
+= content_for :js do    
+  = javascript_include_tag "http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"
+  = javascript_include_tag 'jquery.iframe-transport'
+  = javascript_include_tag 'jquery.fileupload'
+  = javascript_include_tag 'jquery.fileupload-ui'
+  = javascript_include_tag 'playlist_form'
+
+= content_for :css do
+  = stylesheet_link_tag "jquery.fileupload-ui"
+
+

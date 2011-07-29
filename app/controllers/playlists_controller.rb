@@ -3,16 +3,12 @@ class PlaylistsController < ApplicationController
 
   respond_to :html, :xml, :js, :json
 
-	before_filter :authenticate_usuario!
-	load_and_authorize_resource
-
 	before_filter :find_playlist, :except => [:index, :new, :create]
-
+	
   # GET /playlists
   # GET /playlists.xml
   def index
-		@search = Playlist.search(params[:search])
-		@playlists = @search.paginate(:page => params[:page], :per_page => 15)
+		@playlists = Playlist.all
     respond_with(@playlists)
   end
 
@@ -39,7 +35,7 @@ class PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(params[:playlist])
     flash[:notice] = 'Se guardó el nuevo Playlist.' if @playlist.save
-    respond_with(@playlist)
+    redirect_to new_playlist_track_path(@playlist)
   end
 
   # PUT /playlists/1
