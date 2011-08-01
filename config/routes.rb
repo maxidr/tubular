@@ -7,7 +7,7 @@ Tubular::Application.routes.draw do
     end
   end
   
-  resources :tracks, :only => [:destroy]  
+  resources :tracks, :only => [:destroy, :edit, :update]
 
 #  resources :contents do
 #    resources :tracks, :only => [:new, :create]

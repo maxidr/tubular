@@ -1,0 +1,12 @@
+$("#track_data").dialog("close");
+$('#fileupload .files tbody').empty();
+$.getJSON($('#fileupload form').prop('action'), function (files) {
+    var fu = $('#fileupload').data('fileupload');
+    fu._adjustMaxNumberOfFiles(-files.length);
+    fu._renderDownload(files)
+        .appendTo($('#fileupload .files tbody'))
+        .fadeIn(function () {
+            // Fix for IE7 and lower:
+            $(this).show();
+        });
+});

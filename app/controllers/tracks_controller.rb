@@ -1,8 +1,9 @@
 # encoding: utf-8
 class TracksController < ApplicationController
   respond_to :html, :json
+  respond_to :js, :only => [:edit, :update]
   
-  before_filter :load_playlist, :except => :destroy
+  before_filter :load_playlist, :except => [:destroy, :edit, :update]
   
   def index    
     @tracks = @playlist.tracks
@@ -24,6 +25,28 @@ class TracksController < ApplicationController
     else
       render :json => [ @track.to_jq_upload.merge({ :error => "custom_failure" }) ].to_json
     end
+  end
+  
+  def edit
+    @track = Track.find(params[:id])
+#    @track.name = @track.content.name
+    @track.start_time = '00:00:00'
+    @track.end_time = @track.content.duration
+    respond_with @track
+  end
+  
+  def update
+    @track = Track.find(params[:id])
+    respond_with do |format|
+      if @track.update_attributes(params[:track])
+        format.js {}
+      else
+        format.js do
+            render :template=>"shared/form_errors.js.erb", 
+            :locals=> { :item => @track,  :notice => "There were errors creating your bar." }            
+        end
+      end
+    end 
   end
   
   # DELETE /tracks/:id

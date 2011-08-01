@@ -10,6 +10,7 @@ class Track < ActiveRecord::Base
   
   # VALIDATIONS ------------------------------------------------------------------------------
   validates_presence_of :content
+#  validates_numericality_of :start_time, :only_integer => true
   
   
   # SCOPES -----------------------------------------------------------------------------------
@@ -27,7 +28,8 @@ class Track < ActiveRecord::Base
       "duration" => content.try(:duration),
       #"thumbnail_url" => avatar.thumb.url,
       "delete_url" => track_path(id),
-      "delete_type" => "DELETE" 
+      "delete_type" => "DELETE",
+      "edit_url" => edit_track_path(self)
      }
   end
   
