@@ -1,12 +1,12 @@
 Tubular::Application.routes.draw do
   resources :playlists do
     resources :tracks, :only => [:new, :create, :index] do
-      collection do 
+      collection do
         put 'sort'
       end
     end
   end
-  
+
   resources :tracks, :only => [:destroy, :edit, :update]
 
 #  resources :contents do
@@ -63,7 +63,7 @@ Tubular::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "contents#index"
+  root :to => "playlists#index"
 
   # See how all your routes lay out with "rake routes"
 

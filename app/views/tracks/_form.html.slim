@@ -1,25 +1,30 @@
 #fileupload
-  = semantic_form_for [@playlist, @track], :html => { :multipart => true } do |form|        
+  = semantic_form_for [@playlist, @track], :html => { :multipart => true } do |form|
     .fileupload-buttonbar
       label.fileinput-button
-        span Add files...
+        span Agregar contenidos...
         = form.file_field :asset
-      button.start type="submit" Start upload
-      button.cancel type="reset" Cancel upload
-      button.delete type="button" Delete files      
+      button.start type="submit" Comenzar subida
+      button.cancel type="reset" Cancelar subida
+      button.delete type="button" Eliminar archivos
   .fileupload-content
     table.files
       tbody#sortable
     .fileupload-progressbar
-    
-= render 'template-upload' 
+
+button.preview_button Previo completo
+
+= render 'template-upload'
 = render 'template-download'
 
 #track_data
 
-= content_for :js do    
+#preview
+
+= content_for :js do
   = javascript_include_tag "jquery.tmpl.min", 'jquery.iframe-transport', 'jquery.fileupload',
-  = javascript_include_tag 'jquery.fileupload-ui', 'tracks_form'
+  = javascript_include_tag 'jquery.fileupload-ui', 'tracks_form', "flowplayer-3.2.6.min"
 
 = content_for :css do
-  = stylesheet_link_tag "jquery.fileupload-ui"
+  = stylesheet_link_tag "jquery.fileupload-ui", "tracks_form"
+

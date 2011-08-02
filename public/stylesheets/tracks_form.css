@@ -1,0 +1,10 @@
+#fileupload{ padding-bottom: 10px; }
+
+.files{ width: 100%; }
+
+.files tbody tr { border: 1px solid #DDD; }
+.files .delete { width: 0; }
+.files .edit { width: 0; }
+
+.preview_button { margin-bottom: 15px; }
+
