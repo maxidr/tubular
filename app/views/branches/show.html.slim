@@ -1,0 +1,20 @@
+h2 Detalles de la #{Branch.human_name}
+
+.show
+  dl
+    dt = Branch.human_attribute_name('name')
+    dd = @branch.name
+    dt = Branch.human_attribute_name('client')
+    dd = link_to @branch.client.name, client_path(@branch.client)
+    - unless @branch.players.empty?
+      dt = Branch.human_attribute_name('players')
+      dd
+        ul
+        - @branch.players.each do |player|
+          li = link_to player.name, player_path(player)
+
+
+= link_to 'Nuevo player', new_branch_players_path(@branch)
+= link_to 'Editar', edit_branch_path(@branch), :class => 'edit_button'
+= link_to 'Volver', branches_path, :class => 'back_button'
+

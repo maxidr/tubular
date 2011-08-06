@@ -1,0 +1,19 @@
+.contextual
+  = link_to "Nuevo #{Client.human_name}", new_client_path, :class => 'new_btn'
+
+h1 clients
+
+table
+  thead
+    tr
+      th Name
+      th
+  tbody
+    - @clients.each do |client|
+      tr
+        td= client.name
+        td.actions
+          = link_to 'Ver', client
+          = link_to 'Editar', edit_client_path(client)
+          = link_to 'Eliminar', client, :confirm => 'Está seguro ?', :method => :delete
+

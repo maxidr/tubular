@@ -1,0 +1,14 @@
+h2 Detalles del #{Player.human_name}
+
+.show
+  dl
+    dt = Player.human_attribute_name('name')
+    dd = @player.name
+    dt = Player.human_attribute_name('branch')
+    dd = link_to @player.branch.name, branch_path(@player.branch)
+    dt = Player.human_attribute_name('client')
+    dd = link_to @player.client.name, client_path(@player.client)
+
+= link_to 'Editar', edit_player_path(@player), :class => 'edit_button'
+= link_to 'Volver', players_path, :class => 'back_button'
+

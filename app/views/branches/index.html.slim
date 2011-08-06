@@ -1,0 +1,21 @@
+.contextual
+  = link_to "Nueva #{Branch.human_name}", new_branch_path, :class => 'new_btn'
+
+h1 Sucursales
+
+table
+  thead
+    tr
+      th = Branch.human_attribute_name('name')
+      th = Branch.human_attribute_name('client')
+      th
+  tbody
+    - @branches.each do |branch|
+      tr
+        td= branch.name
+        td= link_to branch.client.name, client_path(branch.client)
+        td.actions
+          = link_to 'Ver', branch
+          = link_to 'Editar', edit_branch_path(branch)
+          = link_to 'Eliminar', branch, :confirm => 'Está seguro ?', :method => :delete
+

@@ -1,0 +1,17 @@
+h2 Detalles del #{Client.human_name}
+
+.show
+  dl
+    dt = Client.human_attribute_name('name')
+    dd = @client.name
+    - unless @client.branches.empty?
+      dt = Client.human_attribute_name('branches')
+      dd
+        ul
+          - @client.branches.each do |branch|
+            li = link_to branch.name, branch_path(branch)
+
+= link_to 'Nueva sucursal', new_client_branches_path(@client)
+= link_to 'Editar', edit_client_path(@client), :class => 'edit_button'
+= link_to 'Volver', clients_path, :class => 'back_button'
+

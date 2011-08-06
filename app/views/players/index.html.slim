@@ -1,0 +1,21 @@
+.contextual
+  = link_to 'Nuevo Player', new_player_path, :class => 'new_btn'
+
+h1 players
+
+table
+  thead
+    tr
+      th = Player.human_attribute_name('name')
+      th = Player.human_attribute_name('branch')
+      th
+  tbody
+    - @players.each do |player|
+      tr
+        td= player.name
+        td= link_to player.branch.name, branch_path(player.branch)
+        td.actions
+          = link_to 'Ver', player
+          = link_to 'Editar', edit_player_path(player)
+          = link_to 'Eliminar', player, :confirm => 'Está seguro ?', :method => :delete
+

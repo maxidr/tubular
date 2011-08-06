@@ -10,7 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110729145725) do
+ActiveRecord::Schema.define(:version => 20110806021047) do
+
+  create_table "branches", :force => true do |t|
+    t.string   "name"
+    t.integer  "client_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clients", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contents", :force => true do |t|
     t.string   "name"
@@ -21,6 +34,13 @@ ActiveRecord::Schema.define(:version => 20110729145725) do
     t.string   "asset_content_type"
     t.integer  "asset_file_size"
     t.datetime "asset_updated_at"
+  end
+
+  create_table "players", :force => true do |t|
+    t.string   "name"
+    t.integer  "branch_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "playlists", :force => true do |t|

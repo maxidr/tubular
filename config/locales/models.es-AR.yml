@@ -2,6 +2,8 @@
   activerecord:
     models:
       content: "Contenido"
+      client: "Cliente"
+      branch: "Sucursal"
     attributes:
       content:
         name: "Nombre"
@@ -12,4 +14,15 @@
         position: "Posición"
         start_time: "Tiempo de inicio"
         end_time: "Tiempo de finalización"
+      client:
+        name: "Nombre"
+        branches: "Sucursales"
+      branch:
+        name: "Nombre"
+        players: "Players"
+        client: "Cliente"
+      player:
+        name: "Nombre"
+        branch: "Sucursal"
+        client: "Cliente"
 

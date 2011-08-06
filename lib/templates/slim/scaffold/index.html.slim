@@ -7,15 +7,15 @@ table
   thead
     tr
   <% for attribute in attributes -%>
-    th <%= attribute.human_name %>
+    th <%= class_name %>.human_attribute_name('<%= attribute.name %>').capitalize
   <% end -%>
     th
   tbody
     - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
       tr
-      <% for attribute in attributes -%>
+      <% for attribute in attributes %>
         td= <%= singular_table_name %>.<%= attribute.name %>
-      <% end -%>
+      <% end %>
         td.actions
           = link_to 'Ver', <%= singular_table_name %>
           = link_to 'Editar', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)

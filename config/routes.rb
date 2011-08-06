@@ -1,4 +1,14 @@
 Tubular::Application.routes.draw do
+  resources :players
+
+  resources :branches do
+    resource :players, :only => [:new]
+  end
+
+  resources :clients do
+    resource :branches, :only => [:new]
+  end
+
   resources :playlists do
     resources :tracks, :only => [:new, :create, :index] do
       collection do
