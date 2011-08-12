@@ -1,48 +1,31 @@
 require 'spec_helper'
 
-shared_examples_for ParticularDuration do |hours, minutes, seconds, millis|
-  context "Initialize with params" do
-    context ":hours => #{hours}, :minutes => #{minutes}, :seconds => #{seconds}, :millis => #{millis}" do
-      subject { Duration.new(:hours => hours, :minutes => minutes, :seconds => seconds, :millis => millis) }
-      its(:to_s)    { should == "#{hours.nil? '0' : hours}:#{minutes.nil? '0' : minutes}:#{seconds.nil? '0' : seconds}.#{millis.nil? '0' : millis}" }
-      its(:hours)   { should == hours }
-      its(:minutes) { should == minutes }
-      its(:seconds) { should == seconds }
-      its(:millis)  { should == millis }
-    end
+def pad_fragment(fragment)
+  fragment.to_s.rjust(2, '0')
 end
 
-describe Duration do
-
-  context "Initialize with params" do
-    context ":hours => 1, :minutes => 10, :seconds => 30, :millis => 3" do
-      subject { Duration.new(:hours => 1, :minutes => 10, :seconds => 30, :millis => 3) }
-#      it "should return '1:10:30.3' when invoke to_s" do
-#        should_not be_nil
-#        subject.to_s.should == "1:10:30.3"
-#      end
-      its(:to_s)    { should == "1:10:30.3" }
-      its(:hours)   { should == 1 }
-      its(:minutes) { should == 10 }
-      its(:seconds) { should == 30 }
-      its(:millis)  { should == 3 }
-    end
-
-    let(:)
-
-    context ":minutes => 3, :seconds => 10" do
-      it "should return '0:3:10.00' when invoke to_s" do
-        d = Duration.new(:minutes => 3, :seconds => 10)
-        d.should_not be_nil
-        d.to_s.should == "0:3:10.00"
-      end
-    end
+shared_examples 'an object that represent current duration' do |hours, minutes, seconds, millis|
+  context "when initialize with :hours => #{hours}, :minutes => #{minutes}, :seconds => #{seconds}, :millis => #{millis}" do
+    subject { Duration.new(:hours => hours, :minutes => minutes, :seconds => seconds, :millis => millis) }
+    it { should_not be_nil }
+    its(:to_s)    { should == "#{pad_fragment(hours)}:#{pad_fragment(minutes)}:#{pad_fragment(seconds)}.#{pad_fragment(millis)}" }
+    its(:hours)   { should == hours }
+    its(:minutes) { should == minutes }
+    its(:seconds) { should == seconds }
+    its(:millis)  { should == millis }
   end
+end
 
-  it "Constructor without params should be return '0:0:0.00'" do
-    d = Duration.new()
-    d.should_not be_nil
-    d.to_s.should == "0:0:0.00"
+
+describe Duration do
+  it_behaves_like 'an object that represent current duration', 1, 10, 30, 3
+  it_behaves_like 'an object that represent current duration', 0, 0, 3, 0
+  it_behaves_like 'an object that represent current duration', 0, 1, 0, 0
+
+  context "Constructor without params" do
+    subject { Duration.new() }
+    it { should_not be_nil }
+    its(:to_s) { should == "00:00:00.00" }
   end
 
 end
