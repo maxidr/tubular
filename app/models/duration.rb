@@ -1,6 +1,6 @@
 class Duration
 
-  attr_reader :hours, :minutes, :seconds, :millis
+  attr_accessor :hours, :minutes, :seconds, :millis
 
   def initialize(args = {})
     @hours = @minutes = @seconds = @millis = 0

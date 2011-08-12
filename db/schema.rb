@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110806021047) do
+ActiveRecord::Schema.define(:version => 20110812185101) do
 
   create_table "branches", :force => true do |t|
     t.string   "name"
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(:version => 20110806021047) do
   create_table "tracks", :force => true do |t|
     t.integer  "content_id"
     t.integer  "position"
-    t.integer  "start_time"
-    t.integer  "end_time"
+    t.string   "start_time",  :limit => 10
+    t.string   "end_time",    :limit => 10
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "playlist_id"
