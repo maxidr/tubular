@@ -37,16 +37,18 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: tracks
 #
-#  id         :integer         not null, primary key
-#  content_id :integer
-#  position   :integer
-#  start_time :integer
-#  end_time   :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id          :integer         not null, primary key
+#  content_id  :integer
+#  position    :integer
+#  start_time  :string(255)
+#  end_time    :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  playlist_id :integer
 #
 
