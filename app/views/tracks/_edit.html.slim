@@ -1,8 +1,7 @@
 = semantic_form_for @track, :remote => true do |form|
   = form.semantic_fields_for :content do |content|
     = content.input :name, :input_html => { :value => @track.content.name }
-  = form.input :start_time, :hint => "Formato HH:MM:SS"
+  = form.input :start_at, :hint => "Formato HH:MM:SS"
   = form.input :end_time, :hint => "Formato HH:MM:SS"
   = form.buttons
-  
-  
+
