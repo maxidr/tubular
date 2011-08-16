@@ -1,0 +1,18 @@
+.contextual
+  = link_to 'Nuevo Schedule', new_schedule_path, :class => 'new_btn'
+
+h1 schedules
+
+table
+  thead
+    tr
+      th
+  tbody
+    - @schedules.each do |schedule|
+      tr
+      
+        td.actions
+          = link_to 'Ver', schedule
+          = link_to 'Editar', edit_schedule_path(schedule)
+          = link_to 'Eliminar', schedule, :confirm => 'Está seguro ?', :method => :delete
+

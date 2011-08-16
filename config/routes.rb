@@ -1,4 +1,7 @@
 Tubular::Application.routes.draw do
+
+  resources :schedules
+
   resources :players
 
   resources :branches do
