@@ -1,7 +1,9 @@
 # encoding: utf-8
-class Schedule < ActiveRecord::Base
-  belongs_to :playlist
+class Schedule < ActiveRecord::Base  
+  belongs_to :playlist  
   has_many :segments
+  
+  accepts_nested_attributes_for :segments
 end
 
 

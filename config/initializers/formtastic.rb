@@ -72,3 +72,8 @@ Formtastic::FormBuilder.all_fields_required_by_default = false
 # specifying that class here.  Defaults to Formtastic::FormBuilder.
 #Formtastic::Helpers::FormHelper.builder = Custom::SemanticFormBuilder
 
+require 'custom/semantic_form_builder'
+include FormtasticExtensions
+#Formtastic::Helpers::FormHelper.builder = FormtasticExtensions::SemanticFormBuilder
+
+

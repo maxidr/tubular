@@ -22,6 +22,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/new.xml
   def new
     @schedule = Schedule.new
+    @schedule.segments << Segment.new
     respond_with @schedule
   end
 
