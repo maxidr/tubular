@@ -3,9 +3,13 @@
     = form.input :name
     = form.input :start_date, :as => :date_string, :hint => 'día/mes/año'
     = form.input :end_date, as: :date_string, hint: 'día/mes/año'
-    = form.semantic_fields_for :segments do |segment| 
-      = segment.input :start_time
-      = segment.input :end_time
+    = form.semantic_fields_for :segments do |segment|
+      .nested-fields
+        = segment.inputs :name => segment.object.day, :class => 'complex-inputs' do
+          = check_box_tag 'enabled', true
+          = segment.input :wday, :as => :hidden
+          = segment.input :start_time
+          = segment.input :end_time
     = form.input :description, :input_html => { :rows => 3 }
   = form.buttons
 

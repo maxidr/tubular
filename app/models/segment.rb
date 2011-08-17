@@ -1,6 +1,10 @@
 # encoding: utf-8
 class Segment < ActiveRecord::Base
   belongs_to :schedule
+
+  def day
+    Date::DAYNAMES[wday]
+  end
 end
 
 
