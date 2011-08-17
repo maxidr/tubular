@@ -1,0 +1,23 @@
+form.formtastic fieldset.inputs ol fieldset.complex-inputs {
+    padding: 5px;
+    width: auto;
+}
+
+form.formtastic fieldset.inputs ol fieldset.complex-inputs legend {
+    display: block;
+    float: left;
+    font-size: 0.9em;
+    padding: 5px 0 5px 4%;
+    text-align: left;
+    width: 16%;
+}
+
+form.formtastic fieldset.inputs ol fieldset.complex-inputs ol {
+    float: left;
+    width: 80%;
+}
+
+form.formtastic fieldset.inputs ol fieldset.complex-inputs ol li {
+    float: left;
+    padding: 0 5px 0 0;
+}

@@ -3,13 +3,17 @@
     = form.input :name
     = form.input :start_date, :as => :date_string, :hint => 'día/mes/año'
     = form.input :end_date, as: :date_string, hint: 'día/mes/año'
-    = form.semantic_fields_for :segments do |segment|
-      .nested-fields
-        = segment.inputs :name => segment.object.day, :class => 'complex-inputs' do
-          = check_box_tag 'enabled', true
-          = segment.input :wday, :as => :hidden
-          = segment.input :start_time
-          = segment.input :end_time
+    - @schedule.segments.each_with_index do |segment, index|
+      = form.semantic_fields_for :segments, segment do |s|
+        .nested-fields
+          = s.inputs :name => segment.day, :class => 'complex-inputs' do
+            li 
+              = check_box_tag "schedule[segments_attributes][#{index}][checked]"
+            = s.input :wday, :as => :hidden
+            = s.input :start_time, :label => false 
+            = s.input :end_time, :label => false
     = form.input :description, :input_html => { :rows => 3 }
   = form.buttons
 
+= content_for :css do
+  = stylesheet_link_tag 'schedules_form'

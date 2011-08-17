@@ -34,6 +34,7 @@ class SchedulesController < ApplicationController
   # POST /schedules
   # POST /schedules.xml
   def create
+#    params[:schedule][:segments_attributes].each { |k, v| v.delete("checked") }
     @schedule = Schedule.new(params[:schedule])
     flash[:notice] = 'Se guardó el nuevo Schedule.' if @schedule.save
     respond_with(@schedule)

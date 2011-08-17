@@ -1,9 +1,11 @@
 # encoding: utf-8
 class Segment < ActiveRecord::Base
   belongs_to :schedule
+  
+  attr_accessor :checked
 
   def day
-    Date::DAYNAMES[wday]
+    I18n.t("date.day_names")[wday]
   end
 end
 

@@ -30,7 +30,7 @@ gem 'sqlite3'
 #   gem 'webrat'
 # end
 
-gem 'formtastic', '2.0.0.rc1'
+gem 'formtastic', '2.0.0.rc4'
 gem "slim-rails"
 gem 'jquery-rails', '>= 1.0.3'
 gem "paperclip", "~> 2.3"

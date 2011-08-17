@@ -3,7 +3,7 @@ class Schedule < ActiveRecord::Base
   belongs_to :playlist  
   has_many :segments
   
-  accepts_nested_attributes_for :segments
+  accepts_nested_attributes_for :segments, :reject_if => proc { |attrs| attrs['checked'].blank? }
 end
 
 
