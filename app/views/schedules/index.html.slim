@@ -6,11 +6,17 @@ h1 schedules
 table
   thead
     tr
-      th
+      th Name
+      th Start date
+      th End date
+      th Playlist
   tbody
     - @schedules.each do |schedule|
       tr
-      
+        td = schedule.name
+        td = schedule.start_date
+        td = schedule.end_date
+        td = schedule.playlist.try(:name)
         td.actions
           = link_to 'Ver', schedule
           = link_to 'Editar', edit_schedule_path(schedule)

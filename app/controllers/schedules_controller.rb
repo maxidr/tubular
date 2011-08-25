@@ -22,7 +22,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/new.xml
   def new
     @schedule = Schedule.new
-    Date::DAYNAMES.each_with_index { |day, index| @schedule.segments << Segment.new(:wday => index) }
+    @schedule.build_default_segments
     respond_with @schedule
   end
 
