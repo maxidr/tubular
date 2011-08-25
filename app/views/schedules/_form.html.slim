@@ -1,3 +1,6 @@
+script
+  | var edit = #{action_name == 'edit'}
+
 = semantic_form_for (@schedule) do |form|
   = form.inputs do
     = form.input :name
@@ -12,7 +15,7 @@
             = s.input :wday, :as => :hidden
             = s.input :start_time, :label => false, :disabled => !segment.checked
             = s.input :end_time, :label => false, :disabled => !segment.checked
-            = hidden_field_tag "schedule[segments_attributes][#{index}][_destroy]", false
+            = hidden_field_tag "schedule[segments_attributes][#{index}][_destroy]", ""
     = form.input :description, :input_html => { :rows => 3 }
   = form.buttons
 

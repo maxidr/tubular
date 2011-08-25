@@ -3,7 +3,10 @@ class Schedule < ActiveRecord::Base
   belongs_to :playlist
   has_many :segments
 
-  accepts_nested_attributes_for :segments, :reject_if => proc { |attrs| attrs['checked'].blank? }
+  accepts_nested_attributes_for :segments, 
+    :reject_if => proc { |attrs| attrs['checked'].blank? && attrs['_destroy'].blank? }, 
+    :allow_destroy => true
+
 
   validates_presence_of :name, :start_date, :end_date, :segments
   #  TODO: Validar que la fecha "start_date" sea anterior a "end_date"

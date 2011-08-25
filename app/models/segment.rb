@@ -8,12 +8,12 @@ class Segment < ActiveRecord::Base
     Segment.new(:wday => day,
         :start_time => Time.parse("9:00"),
         :end_time => Time.parse("18:00"),
-        :checked => (day >= 1 and day <= 5))
+        :checked => (day.to_i >= 1 and day.to_i <= 5))
   end
 
   def checked
-    return true if @checked.nil? and id
-    return @checked
+    return true if @checked.nil? and !id.nil?
+    return false
   end
 
   def day
