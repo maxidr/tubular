@@ -21,8 +21,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/new
   # GET /schedules/new.xml
   def new
-    @schedule = Schedule.new
-    @schedule.build_default_segments
+    @schedule = Schedule.build_default
     respond_with @schedule
   end
 

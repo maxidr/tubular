@@ -1,18 +1,22 @@
 # encoding: utf-8
 class Schedule < ActiveRecord::Base
   belongs_to :playlist
-  has_many :segments
+  has_many :segments, :dependent => :destroy
 
   accepts_nested_attributes_for :segments, 
-    :reject_if => proc { |attrs| attrs['checked'].blank? && attrs['_destroy'].blank? }, 
+    # :reject_if => proc { |attrs| attrs['checked'].blank? && attrs['_destroy'].blank? },
+    :reject_if => proc { |attrs| attrs['schedule_id'] == "0" && attrs['_destroy'].blank? },  
     :allow_destroy => true
 
 
   validates_presence_of :name, :start_date, :end_date, :segments
   #  TODO: Validar que la fecha "start_date" sea anterior a "end_date"
 
-  def build_default_segments
-    Date::DAYNAMES.each_with_index { |day, index| segments << Segment.build_default(day) }
+  def self.build_default
+    t = Date.today
+    obj = Schedule.new(:start_date => t.at_beginning_of_month, :end_date => t.at_end_of_month)
+    Date::DAYNAMES.each_with_index { |day, index| obj.segments << Segment.build_default(day) }
+    obj
   end
 end
 

@@ -6,12 +6,13 @@ script
     = form.input :name
     = form.input :start_date, :as => :date_string, :hint => 'día/mes/año'
     = form.input :end_date, as: :date_string, hint: 'día/mes/año'
-    - week_segments(@schedule).each_with_index do |segment, index|
-      = form.semantic_fields_for :segments, segment do |s|
-        .nested-fields
-          = s.inputs :name => segment.day, :class => 'complex-inputs' do
-            li
-              = check_box_tag "schedule[segments_attributes][#{index}][checked]", segment.wday, segment.checked
+    = form.inputs 'Cronograma semanal', :class => 'complex-inputs' do
+      - week_segments(@schedule).each_with_index do |segment, index|
+        = form.semantic_fields_for :segments, segment do |s| 
+          / = s.inputs :name => segment.day, :class => 'complex-inputs' do
+          = s.inputs :class => 'complex-inputs' do
+            = s.input :schedule_id, :as => :boolean, :label => segment.day, \
+              :checked_value => segment.schedule_id, :input_html => {:class => 'selection'}
             = s.input :wday, :as => :hidden
             = s.input :start_time, :label => false, :disabled => !segment.checked
             = s.input :end_time, :label => false, :disabled => !segment.checked
