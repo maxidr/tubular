@@ -1,5 +1,7 @@
 Tubular::Application.routes.draw do
 
+  get "calendars/index"
+
   resources :schedules
 
   resources :players
@@ -21,6 +23,12 @@ Tubular::Application.routes.draw do
   end
 
   resources :tracks, :only => [:destroy, :edit, :update]
+  
+  resources :calendars, :only => [:index, :events] do
+    collection do
+      get 'events'
+    end
+  end
 
 #  resources :contents do
 #    resources :tracks, :only => [:new, :create]

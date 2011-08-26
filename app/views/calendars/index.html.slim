@@ -1,0 +1,10 @@
+h1 Calendars#index
+
+#calendar
+
+= content_for :css do
+  = stylesheet_link_tag 'fullcalendar', 'jquery.qtip.min'
+
+= content_for :js do
+  = javascript_include_tag 'fullcalendar.min', 'jquery.qtip.min', 'calendar_index'
+

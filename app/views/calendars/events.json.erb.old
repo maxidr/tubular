@@ -1,0 +1,8 @@
+[
+<% @schedules.each do |schedule| %>
+{ "id":<%= schedule.id %>,"title":"<%= schedule.name %>","start":"<%= schedule.start_date.to_s %>","end":"<%= schedule.end_date.to_s %>","url":"<%= edit_schedule_url(schedule) %>"},
+<% end -%>
+]
+
+
+

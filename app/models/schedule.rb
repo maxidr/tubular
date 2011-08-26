@@ -1,5 +1,8 @@
 # encoding: utf-8
 class Schedule < ActiveRecord::Base
+
+  include Rails.application.routes.url_helpers
+
   belongs_to :playlist
   has_many :segments, :dependent => :destroy
 
@@ -10,12 +13,29 @@ class Schedule < ActiveRecord::Base
 
   validates_presence_of :name, :start_date, :end_date, :segments
   #  TODO: Validar que la fecha "start_date" sea anterior a "end_date"
+  
+  scope :in_range, lambda { |start_filter, end_filter|
+    where(
+      "(start_date <= :start AND end_date >= :start) OR (start_date <= :end AND end_date >= :end)" +
+      " OR (start_date >= :start AND end_date <= :end)", \
+      :start => start_filter, :end => end_filter)
+  }
 
   def self.build_default
     t = Date.today
     obj = Schedule.new(:start_date => t.at_beginning_of_month, :end_date => t.at_end_of_month)
     Date::DAYNAMES.each_with_index { |day, index| obj.segments << Segment.build_default(day) }
     obj
+  end
+  
+  def as_json(options = {})
+    {
+      id: self.id,
+      title: self.name,
+      start: self.start_date.to_s,
+      end: self.end_date.to_s,
+      information: "JA!!"
+    }
   end
 end
 
