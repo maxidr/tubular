@@ -4,7 +4,6 @@ class Schedule < ActiveRecord::Base
   has_many :segments, :dependent => :destroy
 
   accepts_nested_attributes_for :segments, 
-    # :reject_if => proc { |attrs| attrs['checked'].blank? && attrs['_destroy'].blank? },
     :reject_if => proc { |attrs| attrs['schedule_id'] == "0" && attrs['_destroy'].blank? },  
     :allow_destroy => true
 

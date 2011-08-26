@@ -2,6 +2,15 @@ h2 Detalles del #{Schedule.human_name}
 
 .show
   dl
+    dt = Schedule.human_attribute_name('name')
+    dd = @schedule.name
+    dt Duración
+    dd Desde el #{l @schedule.start_date} hasta el #{l @schedule.end_date}
+    dt Cronograma
+    dd
+      ol
+        - @schedule.segments.each do |segment|
+          li #{segment.day} de #{show_time segment.start_time} a #{show_time segment.end_time}
   
 
 = link_to 'Editar', edit_schedule_path(@schedule), :class => 'edit_button'

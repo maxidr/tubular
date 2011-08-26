@@ -60,6 +60,7 @@
 #     short: "%e/%m, %H:%M hs"
       short: "%e/%m/%Y"
       long: "%A, %e de %B de %Y, %H:%M hs"
+      hour_minutes: "%H:%M"
     am: am
     pm: pm
   datetime:
