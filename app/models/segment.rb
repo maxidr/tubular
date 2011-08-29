@@ -2,17 +2,23 @@
 class Segment < ActiveRecord::Base
   belongs_to :schedule
 
-  attr_accessor :checked
+  attr_writer :checked
 
-  def self.build_default(day)
+  def self.build_default(day)    
     Segment.new(:wday => day,
         :start_time => Time.parse("9:00"),
         :end_time => Time.parse("18:00"),
-        :checked => (day.to_i >= 1 and day.to_i <= 5))
+        :checked => (day.to_i >= 1 and day.to_i <= 5))    
   end
 
   def checked
-    return true if @checked.nil? and !id.nil?
+    if @checked.nil?
+      return true if !id.nil?
+    else
+      return @checked
+    end
+#    return @checked if !@checked.nil?
+#    return true if @checked.nil? and !id.nil?)
     return false
   end
 
