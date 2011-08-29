@@ -1,0 +1,8 @@
+"es-AR":
+  index:
+    action:
+      view: "Ver"
+      edit: "Editar"
+      destroy: "Eliminar"
+      destroy_confirm: "Esta seguro?"
+    

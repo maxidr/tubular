@@ -4,6 +4,9 @@
       content: "Contenido"
       client: "Cliente"
       branch: "Sucursal"
+      schedule:
+        one: "Agenda"
+        other: "Agendas"
     attributes:
       content:
         name: "Nombre"
@@ -25,4 +28,9 @@
         name: "Nombre"
         branch: "Sucursal"
         client: "Cliente"
+      schedule:
+        name: "Nombre"
+        start_date: "Inicia"
+        end_date: "Finaliza"
+        playlist: "Playlist"
 

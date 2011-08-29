@@ -34,7 +34,7 @@ class Schedule < ActiveRecord::Base
       title: self.name,
       start: self.start_date.to_s,
       end: self.end_date.to_s,
-      information: "JA!!"
+      segments: self.segments.as_json
     }
   end
 end

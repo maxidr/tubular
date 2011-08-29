@@ -175,5 +175,4 @@
     predicates:
       contains: "%{attribute} contiene"
       equals: "%{attribute} igual a"
-  footer: "Versión %{version} - Copyright &copy; 2011 PAT S.A. - Todos los derechos reservados"
 

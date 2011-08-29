@@ -1,15 +1,15 @@
 .contextual
-  = link_to 'Nuevo Schedule', new_schedule_path, :class => 'new_btn'
+  = link_to 'Nueva agenda', new_schedule_path, :class => 'new_btn'
 
-h1 schedules
+h1 = Schedule.model_name.human :count => :many
 
 table
   thead
     tr
-      th Name
-      th Start date
-      th End date
-      th Playlist
+      th = Schedule.human_attribute_name(:name)
+      th = Schedule.human_attribute_name(:start_date)
+      th = Schedule.human_attribute_name(:end_date)
+      th = Schedule.human_attribute_name(:playlist)
   tbody
     - @schedules.each do |schedule|
       tr
@@ -18,7 +18,7 @@ table
         td = schedule.end_date
         td = schedule.playlist.try(:name)
         td.actions
-          = link_to 'Ver', schedule
-          = link_to 'Editar', edit_schedule_path(schedule)
-          = link_to 'Eliminar', schedule, :confirm => 'Está seguro ?', :method => :delete
+          = link_to t('index.action.view'), schedule
+          = link_to t('index.action.edit'), edit_schedule_path(schedule)
+          = link_to t('index.action.destroy'), schedule, :confirm => 'Está seguro ?', :method => :delete
 

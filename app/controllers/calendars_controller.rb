@@ -2,8 +2,7 @@ class CalendarsController < ApplicationController
 
   respond_to :json, :only => :events
 
-  def index
-    
+  def index    
   end
   
   def events
