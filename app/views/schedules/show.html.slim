@@ -4,6 +4,9 @@ h2 Detalles del #{Schedule.human_name}
   dl
     dt = Schedule.human_attribute_name('name')
     dd = @schedule.name
+    - if @schedule.color
+      dt Color
+      dd.color style="background-color: ##{@schedule.color}"
     dt Duración
     dd Desde el #{l @schedule.start_date} hasta el #{l @schedule.end_date}
     dt Cronograma
@@ -11,8 +14,10 @@ h2 Detalles del #{Schedule.human_name}
       ol
         - @schedule.segments.each do |segment|
           li #{segment.day} de #{show_time segment.start_time} a #{show_time segment.end_time}
-  
 
 = link_to 'Editar', edit_schedule_path(@schedule), :class => 'edit_button'
 = link_to 'Volver', schedules_path, :class => 'back_button'
+
+style
+  | .color { height: 20px; width: 60px; margin-bottom: 5px; }
 
