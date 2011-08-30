@@ -8,12 +8,12 @@ $(function () {
       selections.attr("disabled", "disabled");
     }
   }
-  
+
   function toggle_copy_link(checkbox){
     var copy_link = $(checkbox).parents("fieldset").first().find("ol li a.copy_link");
     copy_link.toggle();
   }
-  
+
   $("a.copy_link").bind("click", function(event){
     event.preventDefault();
     idx = $(this).data("index");
@@ -21,8 +21,12 @@ $(function () {
     start_minutes = $("#schedule_segments_attributes_" + idx + "_start_time_5i").val();
     end_hour = $("#schedule_segments_attributes_" + idx + "_end_time_4i").val();
     end_minutes = $("#schedule_segments_attributes_" + idx + "_end_time_5i").val();
-    console.log("start at " + start_hour + ":" + start_minutes + " end at " + end_hour + ":" + end_minutes);
-    $.each()
+    $("fieldset.segments ol fieldset.complex-inputs").each(function(index, value){
+      $(this).find("#schedule_segments_attributes_" + index + "_start_time_4i").val(start_hour);
+      $(this).find("#schedule_segments_attributes_" + index + "_start_time_5i").val(start_minutes);
+      $(this).find("#schedule_segments_attributes_" + index + "_end_time_4i").val(end_hour);
+      $(this).find("#schedule_segments_attributes_" + index + "_end_time_5i").val(end_minutes);
+    });
   });
 
   $("input:checkbox.selection").bind("change", function(e){
@@ -31,11 +35,21 @@ $(function () {
 
     if(edit){
       var value = "";
-      if(!this.checked){        
+      if(!this.checked){
         value = "true";
       }
       $(this).parents("li").nextAll("input:hidden").val(value);
-    }    
+    }
+  });
+
+  $("#schedule_color").ColorPicker({
+    onSubmit: function(hsb, hex, rgb, el) {
+		  $(el).val(hex);
+		  $(el).ColorPickerHide();
+  	},
+  	onChange: function (hsb, hex, rgb) {
+  		$('#schedule_color').css('backgroundColor', '#' + hex);
+	  }
   });
 });
 

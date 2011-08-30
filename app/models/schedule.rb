@@ -6,14 +6,14 @@ class Schedule < ActiveRecord::Base
   belongs_to :playlist
   has_many :segments, :dependent => :destroy
 
-  accepts_nested_attributes_for :segments, 
-    :reject_if => proc { |attrs| attrs['schedule_id'] == "0" && attrs['_destroy'].blank? },  
+  accepts_nested_attributes_for :segments,
+    :reject_if => proc { |attrs| attrs['schedule_id'] == "0" && attrs['_destroy'].blank? },
     :allow_destroy => true
 
 
   validates_presence_of :name, :start_date, :end_date, :segments
   #  TODO: Validar que la fecha "start_date" sea anterior a "end_date"
-  
+
   scope :in_range, lambda { |start_filter, end_filter|
     where(
       "(start_date <= :start AND end_date >= :start) OR (start_date <= :end AND end_date >= :end)" +
@@ -27,13 +27,14 @@ class Schedule < ActiveRecord::Base
     Date::DAYNAMES.each_with_index { |day, index| obj.segments << Segment.build_default(day) }
     obj
   end
-  
+
   def as_json(options = {})
     {
       id: self.id,
       title: self.name,
       start: self.start_date.to_s,
       end: self.end_date.to_s,
+      color: "##{self.color}",
       segments: self.segments.as_json
     }
   end
