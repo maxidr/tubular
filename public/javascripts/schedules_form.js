@@ -42,14 +42,19 @@ $(function () {
     }
   });
 
-  $("#schedule_color").ColorPicker({
+  $(".color-picker").ColorPicker({
+    color: '#' + $("#schedule_color").val(),
     onSubmit: function(hsb, hex, rgb, el) {
-		  $(el).val(hex);
+	    $("#schedule_color").val(hex);
 		  $(el).ColorPickerHide();
+		  $(el).children('div').css('backgroundColor', '#' + hex);
   	},
-  	onChange: function (hsb, hex, rgb) {
-  		$('#schedule_color').css('backgroundColor', '#' + hex);
-	  }
+//  	onChange: function (hsb, hex, rgb) {
+//  	  $(this).css('backgroundColor', '#' + hex);
+////  		$('#schedule_color').css('backgroundColor', '#' + hex);
+//	  }
   });
+
+  $("div.color-picker div").css('backgroundColor', '#' + $("#schedule_color").val());
 });
 

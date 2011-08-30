@@ -4,7 +4,11 @@ script
 = semantic_form_for (@schedule) do |form|
   = form.inputs do
     = form.input :name
-    = form.input :color, :input_html => {:style => "background-color: ##{@schedule.color}; border: none;", :size => 6}
+    li.string.input.optional.stringish
+      label.label Color
+      div.color-picker
+        div
+    = form.input :color, :as => :hidden
     = form.input :start_date, :as => :date_string, :hint => 'día/mes/año'
     = form.input :end_date, as: :date_string, hint: 'día/mes/año'
     = form.inputs 'Cronograma semanal', :class => 'complex-inputs segments' do

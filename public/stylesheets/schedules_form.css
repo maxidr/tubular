@@ -21,3 +21,23 @@ form.formtastic fieldset.inputs ol fieldset.complex-inputs ol li {
     float: left;
     padding: 0 5px 0 0;
 }
+
+div.color-picker{
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+  float: left;
+  width: 36px;
+  height: 36px;
+  background: url(../images/select2.png)
+}
+
+div.color-picker div {
+  position: relative;
+  top: 4px;
+  left: 4px;
+  width: 28px;
+  height: 28px;
+  background: url(../images/select2.png) center;
+}
+
