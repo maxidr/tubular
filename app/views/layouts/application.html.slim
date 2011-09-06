@@ -9,6 +9,7 @@ html
     = yield :css
   body
     #container
+      #top-stuff        
       = render 'layouts/menu'
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"

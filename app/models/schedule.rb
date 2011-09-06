@@ -11,7 +11,7 @@ class Schedule < ActiveRecord::Base
     :allow_destroy => true
 
 
-  validates_presence_of :name, :start_date, :end_date, :segments
+  validates_presence_of :name, :start_date, :end_date, :segments, :playlist
   #  TODO: Validar que la fecha "start_date" sea anterior a "end_date"
 
   scope :in_range, lambda { |start_filter, end_filter|

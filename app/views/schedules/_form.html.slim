@@ -3,6 +3,7 @@ script
 
 = semantic_form_for (@schedule) do |form|
   = form.inputs do
+    = form.input :playlist
     = form.input :name
     li.string.input.optional.stringish
       label.label Color
