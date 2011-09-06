@@ -2522,5 +2522,13 @@ td .btn {
 /* line 21, ../../app/stylesheets/screen.scss */
 .page-header a.btn {
   float: right;
-  clear: left;
+}
+
+/* line 26, ../../app/stylesheets/screen.scss */
+.page-header {
+  overflow: hidden;
+}
+/* line 28, ../../app/stylesheets/screen.scss */
+.page-header h1 {
+  float: left;
 }

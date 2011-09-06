@@ -20,6 +20,10 @@ td .btn{
 
 .page-header a.btn{
   float: right;
-  clear: left;
 //  display: inline;
+}
+
+.page-header{ 
+  overflow: hidden; 
+  h1 { float: left; }   
 }

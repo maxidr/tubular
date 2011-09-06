@@ -2,8 +2,8 @@
 /   = link_to 'Nueva agenda', new_schedule_path, :class => 'new_btn'
 
 .page-header
-  h1 = Schedule.model_name.human :count => :many  
-  
+  h1 = Schedule.model_name.human :count => :many
+  = link_to 'Nueva agenda', new_playlist_path, :class => 'btn primary'  
 
 table
   thead
@@ -25,4 +25,3 @@ table
           = link_to t('index.action.edit'), edit_schedule_path(schedule), :class => 'btn small'
           = link_to t('index.action.destroy'), schedule, :confirm => 'Está seguro ?', :method => :delete, :class => 'btn small danger'
 
-= link_to 'Nueva agenda', new_schedule_path, :class => 'btn primary'
