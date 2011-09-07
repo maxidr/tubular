@@ -38,3 +38,12 @@ td.actions-column{
   @extend .btn;
   margin-right: 5px;
 }
+
+.formtastic { 
+  fieldset.inputs ol li{
+    padding: 5px;
+    label {
+      
+    }
+  }
+}

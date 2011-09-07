@@ -2545,3 +2545,8 @@ td.actions-column a {
 td.actions-column a, .page-header a, .btn {
   margin-right: 5px;
 }
+
+/* line 43, ../../app/stylesheets/screen.scss */
+.formtastic fieldset.inputs ol li {
+  padding: 5px;
+}
