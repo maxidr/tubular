@@ -13,5 +13,10 @@ $(document).ready(function() {
       showOn: "button",
 			buttonImageOnly: true,
 			buttonText: 'Seleccionar fecha'
-    });    
+  });
+    
+  $("table tbody tr").bind("mouseover mouseout", function(){
+    $(this).toggleClass('hover');
+  });
+    
 });

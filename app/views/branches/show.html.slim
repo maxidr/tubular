@@ -1,4 +1,6 @@
-h2 Detalles de la #{Branch.human_name}
+.page-header
+  h1 Detalles de la #{Branch.human_name}
+  = link_to 'Nuevo player', new_branch_players_path(@branch)
 
 .show
   dl
@@ -13,8 +15,7 @@ h2 Detalles de la #{Branch.human_name}
         - @branch.players.each do |player|
           li = link_to player.name, player_path(player)
 
-
-= link_to 'Nuevo player', new_branch_players_path(@branch)
-= link_to 'Editar', edit_branch_path(@branch), :class => 'edit_button'
-= link_to 'Volver', branches_path, :class => 'back_button'
+.actions
+  = link_to 'Editar', edit_branch_path(@branch), :class => 'edit_button', :class => 'btn primary'
+  = link_to 'Volver', branches_path, :class => 'btn'
 

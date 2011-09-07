@@ -1,8 +1,6 @@
-.contextual
-  = link_to 'Crear contenido', new_content_path, :class => 'new_btn'
-
-
-h1 = Content.model_name.human.pluralize
+.page-header
+  h1 = Content.model_name.human.pluralize
+  = link_to 'Crear contenido', new_content_path
 
 - if @contents
   table(border=1)
@@ -16,8 +14,8 @@ h1 = Content.model_name.human.pluralize
         tr
           td= content.name
           td= content.description
-          td.actions
+          td.actions-column
             = link_to 'Ver', content
             = link_to 'Editar', edit_content_path(content)
-            = link_to 'Eliminar', content, :confirm => 'Está seguro ?', :method => :delete
+            = link_to 'Eliminar', content, :confirm => 'Está seguro ?', :method => :delete, :class => :danger
 

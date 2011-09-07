@@ -1,19 +1,19 @@
 .page-header
-  h1 playlists
-  = link_to 'Nuevo Playlist', new_playlist_path, :class => 'btn primary'
+  h1 Playlists
+  = link_to 'Nuevo Playlist', new_playlist_path
 
 table
   thead
     tr
-      th Name
-      th Description
+      th Nombre
+      th Descripción
       th
   tbody
     - @playlists.each do |playlist|
       tr
         td= playlist.name
         td= playlist.description
-        td
+        td.actions-column
           = link_to 'Editar', new_playlist_track_path(playlist), :class => 'btn small'
-          = link_to 'Eliminar', playlist, :confirm => 'Está seguro ?', :method => :delete, :class => 'btn small danger'
+          = link_to 'Eliminar', playlist, :confirm => 'Está seguro ?', :method => :delete, :class => 'danger'
 

@@ -1,7 +1,6 @@
-.contextual
-  = link_to "Nueva #{Branch.human_name}", new_branch_path, :class => 'new_btn'
-
-h1 Sucursales
+.page-header
+  h1 Sucursales
+  = link_to "Nueva #{Branch.human_name}", new_branch_path
 
 table
   thead
@@ -14,8 +13,8 @@ table
       tr
         td= branch.name
         td= link_to branch.client.name, client_path(branch.client)
-        td.actions
+        td.actions-column
           = link_to 'Ver', branch
           = link_to 'Editar', edit_branch_path(branch)
-          = link_to 'Eliminar', branch, :confirm => 'Está seguro ?', :method => :delete
+          = link_to 'Eliminar', branch, :confirm => 'Está seguro ?', :method => :delete, :class => :danger
 

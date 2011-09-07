@@ -243,7 +243,7 @@ table {
  * Variables and mixins to pre-ignite any new web development project
  * ------------------------------------------------------------------ */
 /* line 218, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_preboot.scss */
-.btn.danger, .btn.danger:hover, .btn.error, .btn.error:hover, .btn.success, .btn.success:hover, .btn.info, .btn.info:hover,
+td.actions-column a.danger, .page-header a.danger, .danger.btn, td.actions-column a.danger:hover, .page-header a.danger:hover, .danger.btn:hover, td.actions-column a.error, .page-header a.error, .error.btn, td.actions-column a.error:hover, .page-header a.error:hover, .error.btn:hover, td.actions-column a.success, .page-header a.success, .success.btn, td.actions-column a.success:hover, .page-header a.success:hover, .success.btn:hover, td.actions-column a.info, .page-header a.info, .info.btn, td.actions-column a.info:hover, .page-header a.info:hover, .info.btn:hover,
 .alert-message.danger,
 .alert-message.danger:hover,
 .alert-message.error,
@@ -255,7 +255,7 @@ table {
   color: white;
 }
 /* line 223, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_preboot.scss */
-.btn.danger, .btn.error,
+td.actions-column a.danger, .page-header a.danger, .danger.btn, td.actions-column a.error, .page-header a.error, .error.btn,
 .alert-message.danger,
 .alert-message.error {
   background-color: #c43c35;
@@ -271,7 +271,7 @@ table {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
 }
 /* line 227, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_preboot.scss */
-.btn.success,
+td.actions-column a.success, .page-header a.success, .success.btn,
 .alert-message.success {
   background-color: #57a957;
   background-repeat: repeat-x;
@@ -286,7 +286,7 @@ table {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
 }
 /* line 231, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_preboot.scss */
-.btn.info,
+td.actions-column a.info, .page-header a.info, .info.btn,
 .alert-message.info {
   background-color: #339bb9;
   background-repeat: repeat-x;
@@ -526,7 +526,7 @@ a:hover {
 }
 
 /* line 129, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.btn {
+td.actions-column a, .page-header a, .btn {
   display: inline-block;
   background-color: #e6e6e6;
   background-repeat: no-repeat;
@@ -555,14 +555,14 @@ a:hover {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 142, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.btn:hover {
+td.actions-column a:hover, .page-header a:hover, .btn:hover {
   background-position: 0 -15px;
   color: #333;
   text-decoration: none;
 }
 
 /* line 148, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.primary {
+.primary, .page-header a {
   background-color: #0064cd;
   background-repeat: repeat-x;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
@@ -577,12 +577,12 @@ a:hover {
   border-bottom-color: #003f81;
 }
 /* line 154, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.primary:hover {
+.primary:hover, .page-header a:hover {
   color: #fff;
 }
 
 /* line 159, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.btn {
+td.actions-column a, .page-header a, .btn {
   -moz-transition-property: all;
   -webkit-transition-property: all;
   -o-transition-property: all;
@@ -597,18 +597,18 @@ a:hover {
   transition-timing-function: linear;
 }
 /* line 161, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.btn.primary {
+td.actions-column a.primary, td.actions-column .page-header a, .page-header td.actions-column a, .page-header a.primary, .page-header a, .page-header a.btn, .primary.btn {
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   border-color: #0064cd #0064cd #003f81;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
 }
 /* line 166, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.btn.primary:hover {
+td.actions-column a.primary:hover, td.actions-column .page-header a:hover, .page-header td.actions-column a:hover, .page-header a.primary:hover, .page-header a:hover, .page-header a.btn:hover, .primary.btn:hover {
   color: #fff;
 }
 /* line 170, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.btn.large {
+td.actions-column a.large, .page-header a.large, .large.btn {
   font-size: 16px;
   line-height: 28px;
   -moz-border-radius: 6px;
@@ -619,13 +619,13 @@ a:hover {
   border-radius: 6px;
 }
 /* line 175, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.btn.small {
+td.actions-column a.small, td.actions-column a, td.actions-column .page-header a, .page-header td.actions-column a, td.actions-column a.btn, .page-header a.small, .small.btn {
   padding-right: 9px;
   padding-left: 9px;
   font-size: 11px;
 }
 /* line 180, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.btn.disabled {
+td.actions-column a.disabled, .page-header a.disabled, .disabled.btn {
   background-image: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=6500);
   opacity: 65;
@@ -636,7 +636,7 @@ a:hover {
   box-shadow: none;
 }
 /* line 188, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.btn:disabled {
+td.actions-column a:disabled, .page-header a:disabled, .btn:disabled {
   background-image: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=6500);
   opacity: 65;
@@ -647,11 +647,11 @@ a:hover {
   box-shadow: none;
 }
 /* line 193, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.btn:disabled.primary {
+td.actions-column a:disabled.primary, td.actions-column .page-header a:disabled, .page-header td.actions-column a:disabled, .page-header a:disabled.primary, .page-header a:disabled, .page-header a.btn:disabled, .btn:disabled.primary {
   color: #fff;
 }
 /* line 197, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_scaffolding.scss */
-.btn:active {
+td.actions-column a:active, .page-header a:active, .btn:active {
   -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
   -o-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -1863,7 +1863,7 @@ footer {
 }
 
 /* line 296, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_patterns.scss */
-.btn {
+td.actions-column a, .page-header a, .btn {
   cursor: pointer;
   display: inline-block;
   background-color: #e6e6e6;
@@ -1905,13 +1905,13 @@ footer {
   transition-timing-function: linear;
 }
 /* line 312, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_patterns.scss */
-.btn:hover {
+td.actions-column a:hover, .page-header a:hover, .btn:hover {
   background-position: 0 -15px;
   color: #333;
   text-decoration: none;
 }
 /* line 319, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_patterns.scss */
-.btn.primary {
+td.actions-column a.primary, td.actions-column .page-header a, .page-header td.actions-column a, .page-header a.primary, .page-header a, .page-header a.btn, .primary.btn {
   color: #fff;
   background-color: #0064cd;
   background-repeat: repeat-x;
@@ -1926,28 +1926,28 @@ footer {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
 }
 /* line 329, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_patterns.scss */
-.btn.disabled {
+td.actions-column a.disabled, .page-header a.disabled, .disabled.btn {
   cursor: default;
   background-image: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=6500);
   opacity: 65;
 }
 /* line 335, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_patterns.scss */
-.btn:disabled {
+td.actions-column a:disabled, .page-header a:disabled, .btn:disabled {
   cursor: default;
   background-image: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=6500);
   opacity: 65;
 }
 /* line 343, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_patterns.scss */
-.btn:active {
+td.actions-column a:active, .page-header a:active, .btn:active {
   -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
   -o-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 /* line 349, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_patterns.scss */
-.btn.large {
+td.actions-column a.large, .page-header a.large, .large.btn {
   font-size: 16px;
   line-height: normal;
   padding: 9px 14px 9px;
@@ -1959,7 +1959,7 @@ footer {
   border-radius: 6px;
 }
 /* line 356, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_patterns.scss */
-.btn.small {
+td.actions-column a.small, td.actions-column a, td.actions-column .page-header a, .page-header td.actions-column a, td.actions-column a.btn, .page-header a.small, .small.btn {
   padding: 7px 9px 7px;
   font-size: 11px;
 }
@@ -2016,7 +2016,7 @@ input[type=submit].btn::-moz-focus-inner {
   line-height: 28px;
 }
 /* line 401, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_patterns.scss */
-.alert-message .btn {
+.alert-message td.actions-column a, td.actions-column .alert-message a, .alert-message .page-header a, .page-header .alert-message a, .alert-message .btn {
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
   -o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
@@ -2329,7 +2329,7 @@ input[type=submit].btn::-moz-focus-inner {
   clear: both;
 }
 /* line 629, ../../../../.rvm/gems/ruby-1.9.2-p180/gems/compass_twitter_bootstrap-0.1.3/stylesheets/compass_twitter_bootstrap/_patterns.scss */
-.modal .modal-footer .btn {
+.modal .modal-footer td.actions-column a, td.actions-column .modal .modal-footer a, .modal .modal-footer .page-header a, .page-header .modal .modal-footer a, .modal .modal-footer .btn {
   float: right;
   margin-left: 10px;
 }
@@ -2510,25 +2510,38 @@ input[type=submit].btn::-moz-focus-inner {
 }
 
 /* line 9, ../../app/stylesheets/screen.scss */
-td .btn {
-  margin-left: 5px;
-}
-
-/* line 13, ../../app/stylesheets/screen.scss */
 .master {
   margin-top: 60px;
 }
 
-/* line 21, ../../app/stylesheets/screen.scss */
-.page-header a.btn {
-  float: right;
-}
-
-/* line 26, ../../app/stylesheets/screen.scss */
+/* line 13, ../../app/stylesheets/screen.scss */
 .page-header {
   overflow: hidden;
 }
-/* line 28, ../../app/stylesheets/screen.scss */
+/* line 15, ../../app/stylesheets/screen.scss */
+.page-header td.actions-column a, td.actions-column .page-header a, .page-header a, .page-header a.btn {
+  float: right;
+}
+/* line 16, ../../app/stylesheets/screen.scss */
 .page-header h1 {
   float: left;
+}
+
+/* line 21, ../../app/stylesheets/screen.scss */
+td.actions-column a {
+  visibility: hidden;
+}
+
+/* line 32, ../../app/stylesheets/screen.scss */
+.hover {
+  background-color: #FEE9CC;
+}
+/* line 34, ../../app/stylesheets/screen.scss */
+.hover td.actions-column a {
+  visibility: visible;
+}
+
+/* line 37, ../../app/stylesheets/screen.scss */
+td.actions-column a, .page-header a, .btn {
+  margin-right: 5px;
 }

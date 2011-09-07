@@ -3,7 +3,7 @@
 
 .page-header
   h1 = Schedule.model_name.human :count => :many
-  = link_to 'Nueva agenda', new_playlist_path, :class => 'btn primary'  
+  = link_to 'Nueva agenda', new_playlist_path 
 
 table
   thead
@@ -20,8 +20,8 @@ table
         td = schedule.start_date
         td = schedule.end_date
         td = schedule.playlist.try(:name)
-        td
-          = link_to t('index.action.view'), schedule, :class => 'btn small'
-          = link_to t('index.action.edit'), edit_schedule_path(schedule), :class => 'btn small'
-          = link_to t('index.action.destroy'), schedule, :confirm => 'Está seguro ?', :method => :delete, :class => 'btn small danger'
+        td.actions-column
+          = link_to t('index.action.view'), schedule
+          = link_to t('index.action.edit'), edit_schedule_path(schedule)
+          = link_to t('index.action.destroy'), schedule, :confirm => 'Está seguro ?', :method => :delete, :class => 'danger'
 
