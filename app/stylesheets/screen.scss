@@ -3,25 +3,42 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
+$hover_bg_color: #FEE9CC;
+@import "compass";
 @import "compass/reset";
+@import "compass/css3/opacity";
+
 @import "compass_twitter_bootstrap";
+//@import "compass_twitter_bootstrap/reset";
+
+//// Core
+//@import "compass_twitter_bootstrap/preboot";
+//@import "compass_twitter_bootstrap/scaffolding";
+
+//// Styled patterns and elements
+//@import "compass_twitter_bootstrap/type";
+//@import "compass_twitter_bootstrap/forms";
+//@import "compass_twitter_bootstrap/tables";
+//@import "compass_twitter_bootstrap/patterns";
 
 .master{
   margin-top: 60px;
 }
 
+.hover { background-color: $hover_bg_color; }
+
 .page-header {
-  overflow: hidden; 
+  overflow: hidden;
   a.btn { float: right; }
-  h1 { float: left; }   
+  h1, h2, h3 { float: left; }
 }
 
-td.actions-column{ 
+td.actions-column{
 //  text-align: right;
   a {
     visibility: hidden;
     @extend .btn;
-    @extend .small;    
+    @extend .small;
   }
 }
 
@@ -29,8 +46,9 @@ td.actions-column{
   a { @extend .btn; @extend .primary; }
 }
 
-.hover { 
-  background-color: #FEE9CC; 
+// Over de las tablas
+table tbody tr:hover {
+  @extend .hover;
   td.actions-column a { visibility: visible; }
 }
 
@@ -39,11 +57,32 @@ td.actions-column{
   margin-right: 5px;
 }
 
-.formtastic { 
-  fieldset.inputs ol li{
-    padding: 5px;
-    label {
-      
+// Mensajes
+.notice { @extend .success; color: #BFBFBF; }
+.alert-message a.close { color: #BFBFBF; @include opacity(0.5); }
+
+.formtastic {
+  fieldset {
+    padding-top: 0;
+    ol { list-style-type: none; margin: 0; padding: 0; }
+    &.inputs ol li {
+      padding: 5px;
+      label {
+        padding-right: 10px;
+        abbr { padding-left: 3px; }
+      }
+      p.inline-hints{ padding-left: 130px + 10px; font-style: italic; }
+    }
+    &.buttons {
+      @extend .actions;
+      ol li.commit input{ @extend .btn; @extend .primary; }
+      ol li.commit { float: left; }
+      ol li.cancel-link {
+        padding-top: 6px;
+        a { margin-left: 10px; }
+      }
     }
   }
+
 }
+

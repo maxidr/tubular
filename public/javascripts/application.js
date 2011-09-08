@@ -1,5 +1,5 @@
 
-$(document).ready(function() { 
+$(document).ready(function() {
   $(".date_string input").datepicker({
       dateFormat: 'dd/mm/yy',
       monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
@@ -14,9 +14,18 @@ $(document).ready(function() {
 			buttonImageOnly: true,
 			buttonText: 'Seleccionar fecha'
   });
-    
-  $("table tbody tr").bind("mouseover mouseout", function(){
-    $(this).toggleClass('hover');
+
+  $("input[type!=submit], select, textarea").bind("focusin focusout", function(){
+    $(this).parent("li").toggleClass('hover');
   });
-    
+
+  $(".alert-message .close").bind("click", function(){
+    $(this).parent().hide('blind');
+  });
+
+//  $("table tbody tr").bind("mouseover mouseout", function(){
+//    $(this).toggleClass('hover');
+//  });
+
 });
+

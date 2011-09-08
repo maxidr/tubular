@@ -1,7 +1,8 @@
 = semantic_form_for (@client) do |form|
   = form.inputs do
-  
     = form.input :name
-  
-  = form.buttons
+  = form.buttons do
+    = form.commit_button
+    li.cancel-link
+      = link_to('Cancelar', clients_path)
 

@@ -1,0 +1,9 @@
+/* line 1, ../../app/stylesheets/schedules.scss */
+li.color-picker {
+  overflow: hidden;
+}
+
+/* line 6, ../../app/stylesheets/schedules.scss */
+.formtastic fieldset.complex-input legend {
+  font-size: 13px;
+}

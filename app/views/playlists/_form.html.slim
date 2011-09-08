@@ -1,5 +1,9 @@
 = semantic_form_for (@playlist) do |form|
-  = form.inputs do  
-    = form.input :name  
-    = form.input :description    
-  = form.buttons
+  = form.inputs do
+    = form.input :name
+    = form.input :description
+  = form.buttons do
+    = form.commit_button
+    li.cancel-link
+      = link_to('Cancelar', playlists_path)
+

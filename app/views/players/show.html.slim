@@ -1,4 +1,5 @@
-h2 Detalles del #{Player.human_name}
+.page-header
+  h2 Detalles del #{Player.human_name}
 
 .show
   dl
@@ -9,6 +10,8 @@ h2 Detalles del #{Player.human_name}
     dt = Player.human_attribute_name('client')
     dd = link_to @player.client.name, client_path(@player.client)
 
-= link_to 'Editar', edit_player_path(@player), :class => 'edit_button'
-= link_to 'Volver', players_path, :class => 'back_button'
+.actions
+  = link_to 'Editar', edit_player_path(@player), :class => 'btn primary'
+  = "  ó  "
+  = link_to 'Volver', players_path
 

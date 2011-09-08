@@ -1,9 +1,9 @@
 = semantic_form_for (@branch) do |form|
   = form.inputs do
-  
     = form.input :name
-  
     = form.input :client
-  
-  = form.buttons
+  = form.buttons do
+    = form.commit_button
+    li.cancel-link
+      = link_to('Cancelar', branches_path)
 

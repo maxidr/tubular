@@ -1,5 +1,5 @@
 .page-header
-  h1 Detalles de la #{Schedule.human_name}
+  h2 Detalles de la #{Schedule.human_name}
 
 .show
   dl
@@ -16,8 +16,9 @@
         - @schedule.segments.each do |segment|
           li #{segment.day} de #{show_time segment.start_time} a #{show_time segment.end_time}
 
-= link_to 'Editar', edit_schedule_path(@schedule), :class => 'btn'
-= link_to 'Volver', schedules_path, :class => 'btn'
+.actions
+  = link_to 'Editar', edit_schedule_path(@schedule), :class => 'btn primary'
+  = link_to 'Volver', schedules_path
 
 style
   | .color { height: 20px; width: 60px; margin-bottom: 5px; }

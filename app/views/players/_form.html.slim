@@ -1,9 +1,9 @@
 = semantic_form_for (@player) do |form|
   = form.inputs do
-  
     = form.input :name
-  
     = form.input :branch
-  
-  = form.buttons
+  = form.buttons do
+    = form.commit_button
+    li.cancel-link
+      = link_to('Cancelar', players_path)
 

@@ -5,11 +5,11 @@ script
   = form.inputs do
     = form.input :playlist
     = form.input :name
-    li.string.input.optional.stringish
+    li.string.input.optional.stringish.color-picker
       label.label Color
       div.color-picker
         div
-    = form.input :color, :as => :hidden
+      = form.input :color, :as => :hidden
     = form.input :start_date, :as => :date_string, :hint => 'día/mes/año'
     = form.input :end_date, as: :date_string, hint: 'día/mes/año'
     = form.inputs 'Cronograma semanal', :class => 'complex-inputs segments' do
@@ -29,7 +29,7 @@ script
 
 
 = content_for :css do
-  = stylesheet_link_tag 'schedules_form', 'colorpicker'
+  = stylesheet_link_tag 'schedules_form', 'colorpicker', 'schedules'
 
 = content_for :js do
   = javascript_include_tag 'schedules_form', 'colorpicker'
