@@ -4,6 +4,26 @@ li.color-picker {
 }
 
 /* line 6, ../../app/stylesheets/schedules.scss */
-.formtastic fieldset.complex-input legend {
+form.formtastic fieldset.inputs ol fieldset.complex-inputs.segments legend {
   font-size: 13px;
+  margin: 0;
+  width: 130px;
+  padding: 0;
+}
+
+/* line 10, ../../app/stylesheets/schedules.scss */
+form.formtastic fieldset.inputs ol fieldset.complex-inputs.segment ol li {
+  float: left;
+}
+
+/* line 14, ../../app/stylesheets/schedules.scss */
+ol.fragments-group li label {
+  display: block;
+  clear: both;
+  float: left;
+}
+/* line 15, ../../app/stylesheets/schedules.scss */
+ol.fragments-group li select {
+  clear: both;
+  float: left;
 }

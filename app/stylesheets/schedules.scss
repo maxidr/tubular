@@ -2,7 +2,16 @@ li.color-picker{
   overflow: hidden;
 }
 
-.formtastic fieldset.complex-input{
-  legend{ font-size: 13px; }
+form.formtastic fieldset.inputs ol fieldset.complex-inputs.segments {
+  legend{ font-size: 13px; margin: 0; width: 130px; padding: 0; }
+}
+
+form.formtastic fieldset.inputs ol fieldset.complex-inputs.segment {
+  ol li { float: left; }
+}
+
+ol.fragments-group{
+  li label{ display: block; clear: both; float: left; }
+  li select{ clear: both; float: left; }
 }
 

@@ -15,7 +15,7 @@ script
     = form.inputs 'Cronograma semanal', :class => 'complex-inputs segments' do
       - week_segments(@schedule).each_with_index do |segment, index|
         = form.semantic_fields_for :segments, segment do |s|
-          = s.inputs :class => 'complex-inputs' do
+          = s.inputs :class => 'complex-inputs segment' do
             = s.input :schedule_id, :as => :boolean, :label => segment.day, :checked_value => segment.schedule_id, \
               :input_html => { :class => 'selection', :checked => segment.checked }
             = s.input :wday, :as => :hidden

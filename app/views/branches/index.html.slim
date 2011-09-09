@@ -2,7 +2,7 @@
   h1 Sucursales
   = link_to "Nueva #{Branch.human_name}", new_branch_path
 
-table
+table.zebra-striped
   thead
     tr
       th = Branch.human_attribute_name('name')
