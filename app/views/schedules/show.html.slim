@@ -15,6 +15,9 @@
       ol
         - @schedule.segments.each do |segment|
           li #{segment.day} de #{show_time segment.start_time} a #{show_time segment.end_time}
+    dt Playlist
+    dd = link_to @schedule.playlist.try(:name), @schedule.playlist
+      
 
 .actions
   = link_to 'Editar', edit_schedule_path(@schedule), :class => 'btn primary'

@@ -1,4 +1,7 @@
-h1 Contenido del playlist "#{@playlist.name}"
+.page-header
+  h2 
+    | Contenido del playlist 
+    small = @playlist.name
 
 == render 'form'
 

@@ -2,14 +2,28 @@ h2 Detalles del #{Playlist.human_name}
 
 .show
   dl
-  
     dt = Playlist.human_attribute_name('name')
     dd = @playlist.name
-  
-    dt = Playlist.human_attribute_name('description')
-    dd = @playlist.description
-  
+    - unless @playlist.description.blank?
+      dt = Playlist.human_attribute_name('description')
+      dd = @playlist.description
+    dt Contenidos
+    dd
+      table
+        thead
+          tr
+            th Nombre
+            th Duración
+            th Tamaño
+        tbody
+          - @playlist.tracks.each do |track|
+            tr          
+              td = track.content.name
+              td = track.content.duration
+              td = number_to_human_size(track.asset.size, :locale => :en)              
+              / td = number_with_precision(track.asset.size)  
 
-= link_to 'Editar', edit_playlist_path(@playlist), :class => 'edit_button'
-= link_to 'Volver', playlists_path, :class => 'back_button'
+.actions
+  = link_to 'Editar', edit_playlist_path(@playlist), :class => :btn
+  = link_to 'Volver', playlists_path
 
