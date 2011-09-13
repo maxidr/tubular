@@ -14,6 +14,6 @@ table
         td= playlist.name
         td= playlist.description
         td.actions-column
-          = link_to 'Editar', new_playlist_track_path(playlist), :class => 'btn small'
+          = link_to 'Editar', edit_playlist_path(playlist), :class => 'btn small'
           = link_to 'Eliminar', playlist, :confirm => 'Está seguro ?', :method => :delete, :class => 'danger'
 
