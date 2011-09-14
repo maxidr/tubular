@@ -75,14 +75,18 @@ table tbody tr:hover {
     }
     &.buttons {
       @extend .actions;
+      ol { overflow: hidden; }
       ol li.commit input{ @extend .btn; @extend .primary; }
-      ol li.commit { float: left; }
+//      ol li.commit { float: left; }
+      ol li { float: left; }
       ol li.cancel-link {
+        float: none;
         padding-top: 6px;
         a { margin-left: 10px; }
       }
     }
   }
-
 }
+
+textarea{ width: 540px; height: 43px; }
 

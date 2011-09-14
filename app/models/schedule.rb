@@ -35,8 +35,18 @@ class Schedule < ActiveRecord::Base
       start: self.start_date.to_s,
       end: self.end_date.to_s,
       color: "##{self.color}",
-      segments: self.segments.as_json
+      segments: self.segments.as_json,
+      tracks: tracks_info.as_json
     }
+  end
+  
+  def tracks_info
+    contents = []
+    return nil if playlist.nil? or playlist.tracks.nil?
+    playlist.tracks.each do |track|
+      contents << track.content 
+    end
+    contents
   end
 end
 
