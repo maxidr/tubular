@@ -5,6 +5,7 @@ class Track < ActiveRecord::Base
   # RELATIONS --------------------------------------------------------------------------------
   belongs_to :content, :class_name => 'Content'
   belongs_to :playlist
+  has_one :client, :through => :playlist
 
   accepts_nested_attributes_for :content
 
@@ -24,15 +25,17 @@ class Track < ActiveRecord::Base
 
   def to_jq_upload
     {
-      "id" => id,
-      "name" => content.try(:name),
-      "size" => asset.try(:size),
-      "url" => asset.try(:url),
-      "duration" => content.try(:duration),
+      "id"          => id,
+      "name"        => content.try(:name),
+      "size"        => asset.try(:size),
+      "url"         => asset.try(:url),
+      "duration"    => content.try(:duration),
+      "publish_at"  => self.publish_at.nil? ? nil : I18n.l(self.publish_at),
+      "expire_at"   => self.expire_at.nil? ? nil : I18n.l(self.expire_at),
       #"thumbnail_url" => avatar.thumb.url,
-      "delete_url" => track_path(id),
+      "delete_url"  => track_path(id),
       "delete_type" => "DELETE",
-      "edit_url" => edit_track_path(self)
+      "edit_url"    => edit_track_path(self)
      }
   end
 

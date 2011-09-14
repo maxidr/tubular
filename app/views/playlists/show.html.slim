@@ -17,13 +17,14 @@ h2 Detalles del #{Playlist.human_name}
             th Tamaño
         tbody
           - @playlist.tracks.each do |track|
-            tr          
+            tr
               td = track.content.name
               td = track.content.duration
-              td = number_to_human_size(track.asset.size, :locale => :en)              
-              / td = number_with_precision(track.asset.size)  
+              td = number_to_human_size(track.asset.size, :locale => :en)
+              / td = number_with_precision(track.asset.size)
 
 .actions
-  = link_to 'Editar', edit_playlist_path(@playlist), :class => :btn
+  = link_to 'Editar', edit_playlist_path(@playlist), :class => 'btn primary'
+  = link_to 'Editar contenidos', new_playlist_track_path(@playlist), :class => 'btn secundary'
   = link_to 'Volver', playlists_path
 

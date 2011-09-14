@@ -2,6 +2,8 @@
     <tr class="template-upload{{if error}} ui-state-error{{/if}}">
         <td class="preview"></td>
         <td class="name">${name}</td>
+        <td class="publish_at">${publish_at}</td>
+        <td class="expire_at">${expire_at}</td>
         <td class="duration">${duration}</td>
         <td class="size">${sizef}</td>
         {{if error}}
@@ -20,3 +22,4 @@
         <td class="cancel"><button>Cancel</button></td>
     </tr>
 </script>
+
