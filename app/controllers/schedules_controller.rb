@@ -2,6 +2,7 @@
 class SchedulesController < ApplicationController
 
   respond_to :html
+  respond_to :json, :only => :show
 
 	before_filter :find_schedule, :except => [:index, :new, :create]
 

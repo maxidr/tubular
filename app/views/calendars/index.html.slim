@@ -2,9 +2,14 @@ h1 Calendario de programación
 
 #calendar
 
+#event_information
+
+== render 'template-event'  
+
 = content_for :css do
-  = stylesheet_link_tag 'fullcalendar', 'jquery.qtip.min'
+  = stylesheet_link_tag 'fullcalendar', "jquery.fileupload-ui", "flick/jquery-ui"
 
 = content_for :js do
   = javascript_include_tag 'fullcalendar.min', 'jquery.qtip.min', 'calendar_index'
+  = javascript_include_tag "jquery.tmpl.min",
 

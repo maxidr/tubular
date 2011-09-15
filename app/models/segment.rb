@@ -17,21 +17,11 @@ class Segment < ActiveRecord::Base
     else
       return @checked
     end
-#    return @checked if !@checked.nil?
-#    return true if @checked.nil? and !id.nil?)
     return false
   end
 
   def day
     I18n.t("date.day_names")[wday]
-  end
-  
-  def as_json(options = {})
-    {
-      wday: self.day,      
-      start: self.start_time.strftime("%H:%M"),
-      end: self.end_time.strftime("%H:%M")
-    }
   end
   
 end

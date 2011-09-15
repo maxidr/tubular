@@ -1,0 +1,7 @@
+{
+   "title":"<%= @schedule.name %>",
+   "segments":<%== segments_to_json(@schedule.segments) %>,
+   "tracks":<%== tracks_to_json(@schedule.playlist.tracks) %> 
+}
+
+
