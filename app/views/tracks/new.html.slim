@@ -1,8 +1,11 @@
 .page-header
-  h2 
-    | Contenido del playlist 
-    small #{@playlist.name} de #{@playlist.client.try(:name)}
+  h2 Contenido del playlist 
+  = link_to 'Editar info', edit_playlist_path(@playlist)
 
+.show
+  dl
+    == render '/playlists/basic_info'
+  
 == render 'form'
 
 = link_to 'Volver', playlists_path, :class => 'back_button'

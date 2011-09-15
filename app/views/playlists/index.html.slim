@@ -6,14 +6,17 @@ table.zebra-striped
   thead
     tr
       th Nombre
+      th Cliente
       th Descripción
       th
   tbody
     - @playlists.each do |playlist|
       tr
         td= playlist.name
+        td= playlist.client.try(:name)
         td= playlist.description
         td.actions-column
+          = link_to 'Ver', playlist, :class => 'btn small'
           = link_to 'Editar', edit_playlist_path(playlist), :class => 'btn small'
           = link_to 'Eliminar', playlist, :confirm => 'Está seguro ?', :method => :delete, :class => 'danger'
 
