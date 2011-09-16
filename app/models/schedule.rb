@@ -27,34 +27,7 @@ class Schedule < ActiveRecord::Base
     Date::DAYNAMES.each_with_index { |day, index| obj.segments << Segment.build_default(day) }
     obj
   end
-
-  def as_json(options = {})
-    {
-      id: self.id,
-      title: self.name,
-      start: self.start_date.to_s,
-      end: self.end_date.to_s,
-      color: "##{self.color}",
-#      segments: self.segments.as_json,
-#      tracks: tracks_info_as_json,
-#      playlist: self.playlist.try(:id)
-    }
-  end
-  
-  def tracks_info_as_json
-    contents = {}
-    return nil if playlist.nil? or playlist.tracks.nil?
-    playlist.tracks.each do |track|
-      contents[track.id] =
-        { :name => track.content.try(:name),
-          :publish_at => track.publish_at,
-          :expire_at => track.expire_at,
-          :duration => track.content.duration,
-          :size => number_to_human_size(track.asset.size, :locale => :en)
-        }
-    end
-    contents
-  end
+ 
 end
 
 

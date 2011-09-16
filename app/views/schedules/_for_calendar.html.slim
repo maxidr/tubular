@@ -31,7 +31,7 @@ table
       th Duración
       th Tamaño
   tbody
-    - @schedule.playlist.tracks.each do |track|    
+    - @schedule.playlist.try(:tracks).try(:each) do |track|    
       tr
         td = track.content.name
         td = track.publish_at
