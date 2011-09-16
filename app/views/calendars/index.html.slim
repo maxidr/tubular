@@ -8,6 +8,5 @@ h1 Calendario de programación
   = stylesheet_link_tag 'fullcalendar', "jquery.fileupload-ui", "flick/jquery-ui", "calendars_index"
 
 = content_for :js do
-  = javascript_include_tag 'fullcalendar.min', 'jquery.qtip.min', 'calendars_index'
-  = javascript_include_tag "jquery.tmpl.min",
+  = javascript_include_tag 'fullcalendar.min', "jquery.tmpl.min", 'jquery.blockUI', 'calendars_index'
 
