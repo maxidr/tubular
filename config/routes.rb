@@ -1,5 +1,7 @@
 Tubular::Application.routes.draw do
 
+  devise_for :users
+
   get "calendars/index"
 
   resources :schedules

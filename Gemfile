@@ -36,6 +36,7 @@ gem 'jquery-rails', '>= 1.0.3'
 gem "paperclip", "~> 2.3"
 gem "compass", ">= 0.11.5"
 gem 'compass_twitter_bootstrap'
+gem 'devise'
 
 group :development do
   gem "annotate"

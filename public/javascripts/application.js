@@ -22,6 +22,10 @@ $(document).ready(function() {
   $(".alert-message .close").bind("click", function(){
     $(this).parent().hide('blind');
   });
+  
+  $("li.menu a.menu").bind("click", function(){
+    $(this).parent().toggleClass("open");
+  });
 
 //  $("table tbody tr").bind("mouseover mouseout", function(){
 //    $(this).toggleClass('hover');

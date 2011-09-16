@@ -12,4 +12,10 @@
         li = link_to 'Playlists', playlists_path
         / li.active 
         /   a href="#" Home
-
+      - if current_user
+        ul.nav.secondary-nav
+          li.menu
+            a.menu href="#" Usuario
+            ul
+              li = link_to 'Editar', edit_user_registration_path(current_user)
+              li = link_to 'Salir', destroy_user_session_path(current_user)
