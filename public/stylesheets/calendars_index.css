@@ -1,0 +1,15 @@
+/* line 3, ../../app/stylesheets/calendars_index.scss */
+.ui-widget-content a {
+  color: #0069D6;
+  padding: 0 5px;
+}
+
+/* line 8, ../../app/stylesheets/calendars_index.scss */
+.ui-widget-content .links {
+  padding-bottom: 15px;
+}
+
+/* line 12, ../../app/stylesheets/calendars_index.scss */
+.page-header h2 small {
+  padding-left: 10px;
+}

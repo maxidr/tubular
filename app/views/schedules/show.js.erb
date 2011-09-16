@@ -1,0 +1,8 @@
+$("#event_information")
+  .empty()
+  .append("<%= escape_javascript( render 'for_calendar' )%>")
+  .dialog({ 
+    modal: true,
+    height: 520,
+    width: 930      
+   });
