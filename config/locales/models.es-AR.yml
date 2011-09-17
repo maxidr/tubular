@@ -35,7 +35,10 @@
         end_date: "Finaliza"
         playlist: "Playlist"
       user:
+        name: "Nombre"
+        surname: "Apellido"
         email: "Email"
         password: "Contraseña"
         remember_me: "No cerrar sesión"
+        password_confirmation: "Confirmar contraseña"
 
