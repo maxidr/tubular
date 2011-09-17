@@ -4,6 +4,7 @@
       content: "Contenido"
       client: "Cliente"
       branch: "Sucursal"
+      user: "Usuario"
       schedule:
         one: "Agenda"
         other: "Agendas"
@@ -33,4 +34,8 @@
         start_date: "Inicia"
         end_date: "Finaliza"
         playlist: "Playlist"
+      user:
+        email: "Email"
+        password: "Contraseña"
+        remember_me: "No cerrar sesión"
 

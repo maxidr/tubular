@@ -1,17 +1,40 @@
-<h2>Sign in</h2>
+<div class="page-header">
+  <h1>Acceso</h1>
+  <%= link_to "Crear una cuenta", new_registration_path(resource_name) %>
+</div>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+  <fieldset>
+    <div class="clearfix">
+      <%= f.label :email %>
+      <div class="input">
+        <%= f.text_field :email %>
+      </div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :password %>
+      <div class="input"><%= f.password_field :password %></div>
+    </div>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+    <% if devise_mapping.rememberable? -%>
+      <div class="clearfix">
+        <%= f.label :remember_me, :id => 'optionsCheckboxes' %>
+        <div class="input">
+          <ul class="inputs-list">
+            <li>
+              <label>
+                <%= f.check_box :remember_me %>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% end -%>
 
-  <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
-  <% end -%>
-
-  <p><%= f.submit "Sign in" %></p>
+    <div class="actions">
+      <%= f.submit "Acceso", :class => 'btn primary' %>
+      <%= link_to "¿Olvidó su contraseña?", new_password_path(resource_name) %>
+    </div>
+  </fieldset>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>
