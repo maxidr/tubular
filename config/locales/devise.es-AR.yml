@@ -25,7 +25,7 @@
       confirmed: 'Su cuenta a sido confirmada correctamente. Ahora puede acceder.'
     registrations:
       signed_up: 'Se a registrado correctamente. Una vez habilitado recibirá un mail de confirmación.'
-      updated: 'A actualizado su cuenta correctamente.'
+      updated: 'Su cuenta se actualizó correctamente.'
       destroyed: 'Adios! Su cuenta a sido cancelada exitosamente. Esperamos verlo pronto.'
     unlocks:
       send_instructions: 'Recibirá un email con instrucciones de como desbloquear su cuenta en unos minutos.'

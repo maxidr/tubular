@@ -1,6 +1,8 @@
 Tubular::Application.routes.draw do
 
   devise_for :users
+  
+  get '/users', :action => :index, :controller => :users
 
   get "calendars/index"
 

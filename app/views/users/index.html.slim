@@ -1,0 +1,14 @@
+.page-header
+  h2 Usuarios
+  
+table
+  thead
+    tr
+      th Nombre
+      th Apellido
+  tbody
+    - @users.each do |user|
+      tr
+        td= user.name
+        td= user.surname
+

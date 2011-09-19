@@ -11,12 +11,13 @@
           li = link_to 'Sucursales', branches_path
           li = link_to 'Players', players_path
           li = link_to 'Playlists', playlists_path
+          li = link_to 'Usuarios', users_path
           / li.active
           /   a href="#" Home
         ul.nav.secondary-nav
           li.menu
             a.menu href="#" #{current_user.complete_name}
             ul
-              li = link_to 'Editar', edit_user_registration_path(current_user)
-              li = link_to 'Salir', destroy_user_session_path(current_user)
+              li = link_to 'Configurar', edit_user_registration_path(current_user)
+              li = link_to 'Cerrar sesión', destroy_user_session_path(current_user)
 
