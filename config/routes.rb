@@ -6,7 +6,11 @@ Tubular::Application.routes.draw do
 
   get "calendars/index"
 
-  resources :schedules
+  resources :schedules do 
+    member do
+      get 'calendar'
+    end
+  end
 
   resources :players
 

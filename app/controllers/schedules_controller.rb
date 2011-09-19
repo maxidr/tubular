@@ -3,8 +3,14 @@ class SchedulesController < ApplicationController
 
   respond_to :html
   respond_to :js, :only => :show
+  respond_to :json, :only => :calendar
 
 	before_filter :find_schedule, :except => [:index, :new, :create]
+	
+	# GET /schedules/1/calendar
+	def calendar
+	  respond_with(@schedule)
+  end
 
   # GET /schedules
   # GET /schedules.xml

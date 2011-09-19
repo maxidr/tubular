@@ -9,7 +9,7 @@ class Track < ActiveRecord::Base
 
   accepts_nested_attributes_for :content
 
-  composed_of :start_at, :class_name => 'Duration', :allow_nil => true, :mapping => %w(start_time to_s)
+#  composed_of :start_at, :class_name => 'Duration', :allow_nil => true, :mapping => %w(start_time to_s)
 #  composed_of :end_time, :class => 'Duration'
 
   # VALIDATIONS ------------------------------------------------------------------------------

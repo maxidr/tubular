@@ -3,7 +3,7 @@
     = content.input :name, :input_html => { :value => @track.content.name }
   = form.input :publish_at, :as => :date_string, :hint => 'día/mes/año'
   = form.input :expire_at,:as => :date_string, :hint => 'día/mes/año'
-  = form.input :start_at, :hint => "Formato HH:MM:SS"
+  = form.input :start_time, :hint => "Formato HH:MM:SS"
   = form.input :end_time, :hint => "Formato HH:MM:SS"
   = form.buttons
 
