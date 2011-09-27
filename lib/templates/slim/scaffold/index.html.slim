@@ -1,8 +1,7 @@
-.contextual
-  = link_to 'Nuevo <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'new_btn'
-
-h1 <%= plural_table_name %>
-
+.page-header
+  h1 <%= plural_table_name %>
+  = link_to 'Nuevo <%= human_name %>', new_<%= singular_table_name %>_path
+  
 table
   thead
     tr
@@ -13,11 +12,11 @@ table
   tbody
     - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
       tr
-      <% for attribute in attributes %>
+      <% for attribute in attributes -%>
         td= <%= singular_table_name %>.<%= attribute.name %>
-      <% end %>
-        td.actions
+      <% end -%>
+        td.actions-column
           = link_to 'Ver', <%= singular_table_name %>
           = link_to 'Editar', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
-          = link_to 'Eliminar', <%= singular_table_name %>, :confirm => 'Está seguro ?', :method => :delete
+          = link_to 'Eliminar', <%= singular_table_name %>, :confirm => 'Está seguro ?', :method => :delete, :class => :danger
 
