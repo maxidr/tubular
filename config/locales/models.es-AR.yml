@@ -5,6 +5,7 @@
       client: "Cliente"
       branch: "Sucursal"
       user: "Usuario"
+      group: "Agrupación"
       schedule:
         one: "Agenda"
         other: "Agendas"
@@ -41,4 +42,6 @@
         password: "Contraseña"
         remember_me: "No cerrar sesión"
         password_confirmation: "Confirmar contraseña"
+      group:
+        name: "Nombre"
 

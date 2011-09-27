@@ -1,8 +1,7 @@
-.contextual
-  = link_to 'Nuevo Group', new_group_path, :class => 'new_btn'
-
-h1 groups
-
+.page-header
+  h1 Agrupaciones
+  = link_to 'Nueva agrupación', new_group_path
+  
 table
   thead
     tr
@@ -10,12 +9,10 @@ table
       th
   tbody
     - @groups.each do |group|
-      tr
-      
-        td= group.name
-      
-        td.actions
+      tr      
+        td= group.name      
+        td.actions-column
           = link_to 'Ver', group
           = link_to 'Editar', edit_group_path(group)
-          = link_to 'Eliminar', group, :confirm => 'Está seguro ?', :method => :delete
+          = link_to 'Eliminar', group, :confirm => 'Está seguro ?', :method => :delete, :class => :danger
 

@@ -3,16 +3,12 @@ class GroupsController < ApplicationController
 
   respond_to :html, :xml, :js, :json
 
-	before_filter :authenticate_usuario!
-	load_and_authorize_resource
-
 	before_filter :find_group, :except => [:index, :new, :create]
 
   # GET /groups
   # GET /groups.xml
   def index
-		@search = Group.search(params[:search])
-		@groups = @search.paginate(:page => params[:page], :per_page => 15)
+		@groups = Group.all
     respond_with(@groups)
   end
 
