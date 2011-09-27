@@ -1,0 +1,12 @@
+h2 Detalles del #{Group.human_name}
+
+.show
+  dl
+  
+    dt = Group.human_attribute_name('name')
+    dd = @group.name
+  
+
+= link_to 'Editar', edit_group_path(@group), :class => 'edit_button'
+= link_to 'Volver', groups_path, :class => 'back_button'
+

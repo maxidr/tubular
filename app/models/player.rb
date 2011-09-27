@@ -1,5 +1,8 @@
 # encoding: utf-8
 class Player < ActiveRecord::Base
+  
+  has_many :group_associations, :as => :groupable
+  
   belongs_to :branch
   has_one :client, :through => :branch
 

@@ -1,0 +1,21 @@
+.contextual
+  = link_to 'Nuevo Group', new_group_path, :class => 'new_btn'
+
+h1 groups
+
+table
+  thead
+    tr
+      th Group.human_attribute_name('name').capitalize
+      th
+  tbody
+    - @groups.each do |group|
+      tr
+      
+        td= group.name
+      
+        td.actions
+          = link_to 'Ver', group
+          = link_to 'Editar', edit_group_path(group)
+          = link_to 'Eliminar', group, :confirm => 'Está seguro ?', :method => :delete
+
