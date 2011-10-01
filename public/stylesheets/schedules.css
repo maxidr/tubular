@@ -16,14 +16,17 @@ form.formtastic fieldset.inputs ol fieldset.complex-inputs.segment ol li {
   float: left;
 }
 
-/* line 14, ../../app/stylesheets/schedules.scss */
-ol.fragments-group li label {
-  display: block;
-  clear: both;
-  float: left;
-}
 /* line 15, ../../app/stylesheets/schedules.scss */
+ol.fragments-group li label {
+  display: inline;
+  clear: none;
+  float: none;
+  width: 50px;
+}
+/* line 16, ../../app/stylesheets/schedules.scss */
 ol.fragments-group li select {
   clear: both;
   float: left;
+  width: 50px;
+  display: block;
 }

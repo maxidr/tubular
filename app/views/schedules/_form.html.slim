@@ -19,7 +19,12 @@ script
             = s.input :schedule_id, :as => :boolean, :label => segment.day, :checked_value => segment.schedule_id, \
               :input_html => { :class => 'selection', :checked => segment.checked }
             = s.input :wday, :as => :hidden
-            = s.input :start_time, :label => false, :disabled => !segment.checked
+            /             li.time.input.optional
+            /               fieldset.fragments
+            /                 ol.fragments-group
+            /                   li.fragment
+            /                     form.select
+            = s.input :start_time, :label => false, :disabled => !segment.checked, :hint => 'test'
             = s.input :end_time, :label => false, :disabled => !segment.checked
             = hidden_field_tag "schedule[segments_attributes][#{index}][_destroy]", ""
             li
@@ -29,7 +34,8 @@ script
 
 
 = content_for :css do
-  = stylesheet_link_tag 'schedules_form', 'colorpicker', 'schedules'
+  = stylesheet_link_tag 'colorpicker', 'schedules'
+/   = stylesheet_link_tag 'schedules_form', 'colorpicker', 'schedules'
 
 = content_for :js do
   = javascript_include_tag 'schedules_form', 'colorpicker'
