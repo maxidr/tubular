@@ -11,3 +11,8 @@ ul
                 = check_box_tag "players[]", player.id, checked?(selection, player)
                 label = player.name
 
+= hidden_field_tag "r_players"
+= hidden_field_tag "r_branches"
+
+
+

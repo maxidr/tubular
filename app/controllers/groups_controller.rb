@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   respond_to :html
   respond_to :js, :only => [:client_structure]
 
-	before_filter :find_group, :except => [:index, :new, :create]
+	before_filter :find_group, :except => [:index, :new, :create, :client_structure]
 
   # GET /groups
   # GET /groups.xml
@@ -38,8 +38,6 @@ class GroupsController < ApplicationController
     branches = params[:branches]
     players = params[:players]
 
-    logger.debug("Branches: #{branches}")
-    logger.debug("Players: #{players}")
     associate_groupable_items(branches, Branch.to_s)
     associate_groupable_items(players, Player.to_s)
 
@@ -50,6 +48,11 @@ class GroupsController < ApplicationController
   # PUT /groups/1
   # PUT /groups/1.xml
   def update
+    branches = params[:branches]
+    players = params[:players]
+    
+    @group.associations_ids
+
     flash[:notice] = 'Se actualizó el Group.' if @group.update_attributes(params[:group])
     respond_with(@group)
   end

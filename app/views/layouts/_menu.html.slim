@@ -7,9 +7,12 @@
         ul.nav
           li = link_to 'Agendas', schedules_path
           li = link_to 'Calendarios', calendars_path
-          li = link_to 'Clientes', clients_path
-          li = link_to 'Sucursales', branches_path
-          li = link_to 'Players', players_path
+          li.menu
+            a.menu href="#" Clientes
+            ul
+              li = link_to 'Ver clientes', clients_path
+              li = link_to 'Sucursales', branches_path
+              li = link_to 'Players', players_path          
           li = link_to 'Playlists', playlists_path
           li = link_to 'Agrupaciones', groups_path
           li = link_to 'Usuarios', users_path

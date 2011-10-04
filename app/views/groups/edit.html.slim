@@ -4,3 +4,6 @@ h1 Editar group
 
 = link_to 'Cancelar y volver', groups_path, :class => 'back_button'
 
+javascript:
+  var players_loaded = #{players_selected(@group)};
+  var branches_loaded = #{branches_selected(@group)};
