@@ -1,0 +1,6 @@
+$("#tree")
+  .empty()
+  .append("<%= escape_javascript( render 'options-tree', :client => @client )%>");
+
+$("#tree ul").checkboxTree({ initializeUnchecked: 'collapsed' });
+

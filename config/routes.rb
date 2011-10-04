@@ -2,13 +2,15 @@ Tubular::Application.routes.draw do
 
   resources :groups
 
+  match 'groups/client_structure/:id' => 'groups#client_structure'
+
   devise_for :users
-  
+
   get '/users', :action => :index, :controller => :users
 
   get "calendars/index"
 
-  resources :schedules do 
+  resources :schedules do
     member do
       get 'calendar'
     end
@@ -33,7 +35,7 @@ Tubular::Application.routes.draw do
   end
 
   resources :tracks, :only => [:destroy, :edit, :update]
-  
+
   resources :calendars, :only => [:index, :events] do
     collection do
       get 'events'

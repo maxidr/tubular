@@ -1,0 +1,13 @@
+- selection ||= selection
+ul
+  - client.branches.each do |branch|
+    li
+      = check_box_tag "branches[]", branch.id, checked?(selection, branch)
+      label #{branch.name}
+      - unless branch.players.empty?
+          ul
+            - branch.players.each do |player|
+              li
+                = check_box_tag "players[]", player.id, checked?(selection, player)
+                label = player.name
+

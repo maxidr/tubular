@@ -1,0 +1,17 @@
+/* line 1, ../../app/stylesheets/group_form.scss */
+#tree ul {
+  border: none;
+}
+/* line 3, ../../app/stylesheets/group_form.scss */
+#tree ul li {
+  padding: 0;
+  line-height: auto;
+}
+/* line 5, ../../app/stylesheets/group_form.scss */
+#tree ul li label {
+  padding: 0;
+  line-height: auto;
+  float: none;
+  width: auto;
+  text-align: left;
+}
