@@ -50,8 +50,8 @@ class GroupsController < ApplicationController
   def update
     branches = params[:branches]
     players = params[:players]
-    
-    @group.associations_ids
+
+    @group.update_relations(branches, players)
 
     flash[:notice] = 'Se actualizó el Group.' if @group.update_attributes(params[:group])
     respond_with(@group)
