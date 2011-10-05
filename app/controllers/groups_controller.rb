@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.xml
   def index
-		@groups = Group.all
+		@groups = Group.page params[:page]
     respond_with(@groups)
   end
 

@@ -52,6 +52,8 @@ GEM
     jquery-rails (1.0.12)
       railties (~> 3.0)
       thor (~> 0.14)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     kgio (2.6.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
@@ -128,6 +130,7 @@ DEPENDENCIES
   devise
   formtastic (= 2.0.0.rc4)
   jquery-rails (>= 1.0.3)
+  kaminari
   mysql2 (= 0.2.7)
   nifty-generators
   paperclip (~> 2.3)

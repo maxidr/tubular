@@ -37,6 +37,8 @@ gem "paperclip", "~> 2.3"
 gem "compass", ">= 0.11.5"
 gem 'compass_twitter_bootstrap'
 gem 'devise'
+gem 'kaminari'
+
 
 group :development do
   gem "annotate"

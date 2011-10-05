@@ -175,4 +175,12 @@
     predicates:
       contains: "%{attribute} contiene"
       equals: "%{attribute} igual a"
+      
+  views:
+    pagination:
+      previous: "&laquo; Anterior"
+      next: "Siguiente &raquo;"
+      first: "Primero"
+      last: "Último"
+      truncate: "..."
 

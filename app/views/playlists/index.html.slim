@@ -20,3 +20,4 @@ table.zebra-striped
           = link_to 'Editar', edit_playlist_path(playlist), :class => 'btn small'
           = link_to 'Eliminar', playlist, :confirm => 'Está seguro ?', :method => :delete, :class => 'danger'
 
+= paginate @playlists

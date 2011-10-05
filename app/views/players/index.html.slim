@@ -18,3 +18,4 @@ table
           = link_to 'Editar', edit_player_path(player)
           = link_to 'Eliminar', player, :confirm => 'Está seguro ?', :method => :delete, :class => :danger
 
+= paginate @players

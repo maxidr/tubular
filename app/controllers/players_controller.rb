@@ -8,7 +8,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.xml
   def index
-    @players = Player.all
+    @players = Player.page params[:page]
 	  respond_with(@players)
   end
 

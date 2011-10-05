@@ -16,3 +16,4 @@ table
           = link_to 'Editar', edit_group_path(group)
           = link_to 'Eliminar', group, :confirm => 'Está seguro ?', :method => :delete, :class => :danger
 
+= paginate @groups

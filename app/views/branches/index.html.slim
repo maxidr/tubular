@@ -18,3 +18,4 @@ table.zebra-striped
           = link_to 'Editar', edit_branch_path(branch)
           = link_to 'Eliminar', branch, :confirm => 'Está seguro ?', :method => :delete, :class => :danger
 
+= paginate @branches

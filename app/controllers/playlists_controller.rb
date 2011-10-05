@@ -8,7 +8,7 @@ class PlaylistsController < ApplicationController
   # GET /playlists
   # GET /playlists.xml
   def index
-		@playlists = Playlist.all
+		@playlists = Playlist.page params[:page]
     respond_with(@playlists)
   end
 

@@ -15,7 +15,7 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.xml
   def index
-		@schedules = Schedule.all
+		@schedules = Schedule.page params[:page]
     respond_with(@schedules)
   end
 

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   respond_to :html
   
   def index
-    @users = User.all
+    @users = User.page params[:page]
     respond_with @users
   end
 

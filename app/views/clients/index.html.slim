@@ -16,3 +16,4 @@ table
           = link_to 'Editar', edit_client_path(client)
           = link_to 'Eliminar', client, :confirm => 'Está seguro ?', :method => :delete, :class => :danger
 
+= paginate @clients 

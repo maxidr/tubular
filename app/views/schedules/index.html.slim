@@ -25,3 +25,4 @@ table
           = link_to t('index.action.edit'), edit_schedule_path(schedule)
           = link_to t('index.action.destroy'), schedule, :confirm => 'Está seguro ?', :method => :delete, :class => 'danger'
 
+= paginate @schedules

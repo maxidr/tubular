@@ -13,7 +13,7 @@ class ClientsController < ApplicationController
   def index
 #		@search = Client.search(params[:search])
 #		@clients = @search.paginate(:page => params[:page], :per_page => 15)
-    @clients = Client.all
+    @clients = Client.page params[:page]
     respond_with(@clients)
   end
 
