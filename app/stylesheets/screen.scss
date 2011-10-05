@@ -60,6 +60,7 @@ table tbody tr:hover {
 // Mensajes
 .notice { @extend .success; color: #BFBFBF; }
 .alert-message a.close { color: #BFBFBF; @include opacity(0.5); }
+form div.error { padding: 5px 10px; }
 
 .formtastic {
   fieldset {

@@ -1,4 +1,12 @@
 var tree = $("#tree");
 tree.hide().empty().append("<%= escape_javascript( render 'options-tree', :client => @client )%>");
-tree.children("ul").checkboxTree({ initializeUnchecked: 'collapsed', onUncheck: { ancestors: 'uncheck' } });
+tree.children("ul").checkboxTree({ 
+  onCheck: {
+    ancestors: 'checkIfFull',
+    descendants: 'check'
+  },
+  onUncheck: {
+    ancestors: 'uncheck'
+  }
+});
 tree.fadeIn();

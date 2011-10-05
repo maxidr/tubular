@@ -34,7 +34,7 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.xml
   def create
-    @group = Group.new(params[:group])
+    @group = Group.new(params[:group])    
     branches = params[:branches]
     players = params[:players]
 
@@ -76,8 +76,9 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
-  def associate_groupable_items(branch_ids, type = 'Branch')
-    branch_ids.each do |id|
+  def associate_groupable_items(ids, type = 'Branch')
+    return if ids.nil?
+    ids.each do |id|
       @group.associations.build(:groupable_id => id, :groupable_type => type)
     end
   end

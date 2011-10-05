@@ -12,5 +12,9 @@ module GroupsHelper
     group.elements.find_all{|e| e.is_a? Player}.map(&:id).to_json
   end
   
+  def load_tree?
+    action_name == 'edit' || (action_name == 'create' and @group.client)
+  end
+  
 end
 

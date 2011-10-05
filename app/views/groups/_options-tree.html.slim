@@ -1,14 +1,17 @@
 - selection ||= selection
+- show = action_name == 'show'
 ul
   - client.branches.each do |branch|
     li
-      = check_box_tag "branches[]", branch.id, checked?(selection, branch)
+      = check_box_tag "branches[]", branch.id, checked?(selection, branch) unless show
+      = image_tag 'tick.png' if show and checked?(selection, branch)
       label #{branch.name}
       - unless branch.players.empty?
           ul
             - branch.players.each do |player|
               li
-                = check_box_tag "players[]", player.id, checked?(selection, player)
+                = check_box_tag "players[]", player.id, checked?(selection, player) unless show
+                = image_tag 'tick.png' if show and checked?(selection, player)
                 label = player.name
 
 = hidden_field_tag "r_players"

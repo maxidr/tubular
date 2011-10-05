@@ -6,5 +6,8 @@
     a.close href="#" x
     p = msg
 
-
+/ - if notice || alert
+/   div class="alert-message #{ notice.nil? ? 'notice' : 'alert' }"
+/     a.close href="#" x
+/     p = notice || alert
 

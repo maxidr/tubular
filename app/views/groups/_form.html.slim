@@ -1,10 +1,11 @@
 = semantic_form_for (@group) do |form|
+  = render 'shared/errors', :model => @group
   = form.inputs do
     = form.input :name
     = form.input :client
     li
       #tree
-        - if action_name == 'edit'
+        - if load_tree?
           == render 'options-tree', :client => @group.client, :selection => @group.elements
 
   = form.buttons

@@ -1,0 +1,5 @@
+- if model && model.errors.any?
+  div class="alert-message error"
+    a.close href="#" x
+    - model.errors.full_messages.each do |msg|
+      p = msg

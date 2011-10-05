@@ -2566,67 +2566,72 @@ td.actions-column a, .page-header a, .btn, .formtastic fieldset.buttons ol li.co
   opacity: 0.5;
 }
 
-/* line 65, ../../app/stylesheets/screen.scss */
+/* line 63, ../../app/stylesheets/screen.scss */
+form div.error {
+  padding: 5px 10px;
+}
+
+/* line 66, ../../app/stylesheets/screen.scss */
 .formtastic fieldset {
   padding-top: 0;
 }
-/* line 67, ../../app/stylesheets/screen.scss */
+/* line 68, ../../app/stylesheets/screen.scss */
 .formtastic fieldset ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 68, ../../app/stylesheets/screen.scss */
+/* line 69, ../../app/stylesheets/screen.scss */
 .formtastic fieldset.inputs ol li {
   padding: 5px;
 }
-/* line 70, ../../app/stylesheets/screen.scss */
+/* line 71, ../../app/stylesheets/screen.scss */
 .formtastic fieldset.inputs ol li label {
   padding-right: 10px;
 }
-/* line 72, ../../app/stylesheets/screen.scss */
+/* line 73, ../../app/stylesheets/screen.scss */
 .formtastic fieldset.inputs ol li label abbr {
   padding-left: 3px;
 }
-/* line 74, ../../app/stylesheets/screen.scss */
+/* line 75, ../../app/stylesheets/screen.scss */
 .formtastic fieldset.inputs ol li p.inline-hints {
   padding-left: 140px;
   font-style: italic;
 }
-/* line 78, ../../app/stylesheets/screen.scss */
+/* line 79, ../../app/stylesheets/screen.scss */
 .formtastic fieldset.buttons ol {
   overflow: hidden;
 }
-/* line 81, ../../app/stylesheets/screen.scss */
+/* line 82, ../../app/stylesheets/screen.scss */
 .formtastic fieldset.buttons ol li {
   float: left;
 }
-/* line 82, ../../app/stylesheets/screen.scss */
+/* line 83, ../../app/stylesheets/screen.scss */
 .formtastic fieldset.buttons ol li.cancel-link {
   float: none;
   padding-top: 6px;
 }
-/* line 85, ../../app/stylesheets/screen.scss */
+/* line 86, ../../app/stylesheets/screen.scss */
 .formtastic fieldset.buttons ol li.cancel-link a {
   margin-left: 10px;
 }
 
-/* line 91, ../../app/stylesheets/screen.scss */
+/* line 92, ../../app/stylesheets/screen.scss */
 textarea {
   width: 540px;
   height: 43px;
 }
 
-/* line 94, ../../app/stylesheets/screen.scss */
+/* line 95, ../../app/stylesheets/screen.scss */
 .fileupload-buttonbar label {
   width: auto;
 }
-/* line 95, ../../app/stylesheets/screen.scss */
+/* line 96, ../../app/stylesheets/screen.scss */
 .fileupload-buttonbar .ui-button-text {
   font-size: 0.9em;
 }
 
-/* line 98, ../../app/stylesheets/screen.scss */
+/* line 99, ../../app/stylesheets/screen.scss */
 button .ui-button {
   font-size: 0.9em;
 }
